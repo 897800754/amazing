@@ -70,3 +70,4 @@ spring/src/main/resources/templates/
 /.mvn/
 /mvnw
 /mvnw.cmd
+/spring/.mvn/
