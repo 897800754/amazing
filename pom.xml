@@ -10,6 +10,8 @@
     <name>amazing</name>
     <description>Demo project for Spring Boot</description>
 
+
+a
     <modules>
         <module>leetcode</module>
         <module>clazz-loader</module>

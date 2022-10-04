@@ -31,3 +31,42 @@ build/
 
 ### VS Code ###
 .vscode/
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+bytebuddy/src/main/resources/
+bytebuddy/src/test/
+clazz-loader/src/main/resources/
+clazz-loader/src/test/
+design/src/main/resources/
+design/src/test/
+jol/src/main/resources/
+jol/src/test/
+leetcode/src/main/resources/
+leetcode/src/test/
+spring/src/main/resources/static/
+spring/src/main/resources/templates/
+!/.idea/
+!/.mvn/
+!/mvnw
+!/mvnw.cmd
+.idea/.gitignore
+.idea/codeStyles/
+.idea/compiler.xml
+.idea/encodings.xml
+.idea/inspectionProfiles/
+.idea/jarRepositories.xml
+.idea/libraries/
+.idea/misc.xml
+.idea/modules.xml
+.idea/uiDesigner.xml
+.idea/vcs.xml
+/.idea/
+/.mvn/
+/mvnw
+/mvnw.cmd
