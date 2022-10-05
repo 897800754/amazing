@@ -16,6 +16,7 @@
         <module>design</module>
         <module>jol</module>
         <module>bytebuddy</module>
+        <module>spring-learn</module>
     </modules>
 
     <properties>

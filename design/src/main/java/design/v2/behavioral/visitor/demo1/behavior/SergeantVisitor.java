@@ -1,8 +1,8 @@
-package design.v2.behavioral.visitor.behavior;
+package design.v2.behavioral.visitor.demo1.behavior;
 
-import design.v2.behavioral.visitor.structure.Commander;
-import design.v2.behavioral.visitor.structure.Sergeant;
-import design.v2.behavioral.visitor.structure.Soldier;
+import design.v2.behavioral.visitor.demo1.structure.Commander;
+import design.v2.behavioral.visitor.demo1.structure.Sergeant;
+import design.v2.behavioral.visitor.demo1.structure.Soldier;
 
 /**
  * @author: cg1

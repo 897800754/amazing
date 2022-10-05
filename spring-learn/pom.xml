@@ -9,7 +9,7 @@
     </parent>
     <artifactId>spring</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring</name>
+    <name>spring-learn</name>
 
     <dependencies>
         <dependency>

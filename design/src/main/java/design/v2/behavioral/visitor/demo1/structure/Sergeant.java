@@ -1,6 +1,6 @@
-package design.v2.behavioral.visitor.structure;
+package design.v2.behavioral.visitor.demo1.structure;
 
-import design.v2.behavioral.visitor.behavior.UnitVisitor;
+import design.v2.behavioral.visitor.demo1.behavior.UnitVisitor;
 
 /**
  * 中士
