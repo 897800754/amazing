@@ -18,7 +18,6 @@ public class mainClass {
         Chocolate c2 = new Chocolate(c1, 20f);
         System.out.println(c2.CostAll());
         System.out.println("==========================");
-        System.out.println(new Chocolate(new Chocolate(new Mike(
-                new LongBlack("黑咖啡", 50f, "热"), 20f), 20f), 20f).CostAll());
+        System.out.println(new Chocolate(new Chocolate(new Mike(new LongBlack("黑咖啡", 50f, "热"), 20f), 20f), 20f).CostAll());
     }
 }
