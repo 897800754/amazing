@@ -32,7 +32,7 @@ public class ApiGateway {
     }
 
     private Object combo(Response image, Response product) {
-        return "success combo image & product";
+        return "success merge image & product";
     }
 
 
