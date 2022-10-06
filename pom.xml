@@ -16,7 +16,8 @@
         <module>design</module>
         <module>jol</module>
         <module>bytebuddy</module>
-        <module>spring-learn</module>
+        <module>spring-validate</module>
+        <module>spring-batch</module>
     </modules>
 
     <properties>
