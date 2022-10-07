@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.transaction.PlatformTransactionManager;
 
 /**
- * 条件下一步
+ * 基于ExitStatus的 step flow 控制
  *
  * @author: cg1
  * @date: 2022-10-06 02:25
