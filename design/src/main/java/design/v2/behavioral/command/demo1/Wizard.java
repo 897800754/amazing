@@ -7,7 +7,10 @@ import java.util.LinkedList;
  * 巫师
  */
 public class Wizard {
-
+    /**
+     * Runnable 太经典了
+     * start 一根线程 runnable就是一种命令模式
+     */
     private final Deque<Runnable> undoStack = new LinkedList<>();
     private final Deque<Runnable> redoStack = new LinkedList<>();
 
