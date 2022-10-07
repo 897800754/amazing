@@ -8,14 +8,13 @@ import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 
 /**
  * @author: cg1
  * @date: 2022-10-06 02:16
  **/
-@Configuration
+//@Configuration
 public class FootBallJobConfig {
     @Autowired
     private JobBuilderFactory jobBuilderFactory;
