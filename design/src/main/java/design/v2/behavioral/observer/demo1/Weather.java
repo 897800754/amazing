@@ -3,7 +3,7 @@ package design.v2.behavioral.observer.demo1;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Weather {
+public class Weather implements Subject {
 
     private WeatherType currentWeather;
     private final List<WeatherObserver> observers;
@@ -13,10 +13,12 @@ public class Weather {
         currentWeather = WeatherType.SUNNY;
     }
 
+    @Override
     public void addObserver(WeatherObserver obs) {
         observers.add(obs);
     }
 
+    @Override
     public void removeObserver(WeatherObserver obs) {
         observers.remove(obs);
     }
@@ -31,7 +33,8 @@ public class Weather {
         notifyObservers();
     }
 
-    private void notifyObservers() {
+    @Override
+    public void notifyObservers() {
         for (WeatherObserver obs : observers) {
             obs.update(currentWeather);
         }

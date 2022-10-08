@@ -29,6 +29,7 @@ public class JdbcCursorItemReaderConfig {
                 .rowMapper(new CustomerCreditRowMapper())
                 .build();
 
+
     }
 
     public class CustomerCreditRowMapper implements RowMapper {
