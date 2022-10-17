@@ -20,6 +20,7 @@ public class H2DataSource {
                 .setType(EmbeddedDatabaseType.H2)
                 .addScript("/org/springframework/batch/core/schema-drop-h2.sql")
                 .addScript("/org/springframework/batch/core/schema-h2.sql")
+                .addScript("classpath:init.sql")
                 .build();
     }
 
