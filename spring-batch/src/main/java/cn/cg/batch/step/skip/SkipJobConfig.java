@@ -7,7 +7,6 @@ import org.springframework.batch.item.ItemReader;
 import org.springframework.batch.item.ItemWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import java.io.FileNotFoundException;
@@ -18,7 +17,7 @@ import java.io.FileNotFoundException;
  * @author: cg1
  * @date: 2022-10-06 02:25
  **/
-@Configuration
+//@Configuration
 public class SkipJobConfig {
     @Autowired
     private JobBuilderFactory jobBuilderFactory;
@@ -38,7 +37,7 @@ public class SkipJobConfig {
                 .writer(itemWriter())
                 .faultTolerant()
                 .skipLimit(10)
-                //跳过
+                //遇到该异常跳过
                 .skip(Exception.class)
                 //不跳过
                 .noSkip(FileNotFoundException.class)

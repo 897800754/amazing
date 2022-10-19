@@ -8,7 +8,7 @@ import org.springframework.batch.core.scope.context.ChunkContext;
 import org.springframework.batch.core.step.tasklet.Tasklet;
 import org.springframework.batch.repeat.RepeatStatus;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Bean;
 import org.springframework.transaction.PlatformTransactionManager;
 
 /**
@@ -17,7 +17,7 @@ import org.springframework.transaction.PlatformTransactionManager;
  * @author: cg1
  * @date: 2022-10-06 02:25
  **/
-@Configuration
+//@Configuration
 public class TaskLetJobConfig {
     @Autowired
     private JobBuilderFactory jobBuilderFactory;
@@ -29,7 +29,7 @@ public class TaskLetJobConfig {
     private PlatformTransactionManager transactionManager;
 
 
-    //    @Bean
+    @Bean
     public Step step1() {
         return this.stepBuilderFactory.get("step1")
                 .tasklet(myTasklet())

@@ -4,12 +4,13 @@ import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
-import org.springframework.batch.item.ItemReader;
-import org.springframework.batch.item.ItemWriter;
+import org.springframework.batch.item.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.transaction.PlatformTransactionManager;
+
+import java.util.List;
 
 /**
  * @author: cg1
@@ -57,11 +58,21 @@ public class EndOfDayJobConfiguration {
     }
 
     private ItemReader<? extends String> itemReader() {
-        return null;
+        return new ItemReader() {
+            @Override
+            public Object read() throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
+                return null;
+            }
+        };
     }
 
     private ItemWriter<? super String> itemWriter() {
-        return null;
+        return new ItemWriter<String>() {
+            @Override
+            public void write(List<? extends String> list) throws Exception {
+
+            }
+        };
     }
 
 

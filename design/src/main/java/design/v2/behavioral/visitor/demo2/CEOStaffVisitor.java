@@ -15,6 +15,7 @@ public class CEOStaffVisitor implements StaffVisitor {
     }
 
     @Override
+
     public void visitPm(PmStaff pmStaff) {
         System.out.printf("CEOStaffVisitor:name %s type %s workingHours %s%n", pmStaff.getName(), pmStaff.getType(), pmStaff.getWorkingHours());
 
