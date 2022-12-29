@@ -18,6 +18,7 @@
         <module>bytebuddy</module>
         <module>spring-validate</module>
         <module>spring-batch</module>
+        <module>spring-retry</module>
     </modules>
 
     <properties>
