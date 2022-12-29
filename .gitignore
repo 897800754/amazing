@@ -71,3 +71,6 @@ spring/src/main/resources/templates/
 /mvnw
 /mvnw.cmd
 /spring/.mvn/
+/spring-kafka/mvnw
+/spring-kafka/mvnw.cmd
+/spring-kafka/.mvn/
