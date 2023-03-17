@@ -5,6 +5,7 @@ import cn.cg.spring.retry.custom.CustomService;
 import cn.cg.spring.retry.hello.HelloService;
 import cn.cg.spring.retry.recover.RecoverService;
 import cn.cg.spring.retry.template.RetryAutoConfig;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.retry.RetryCallback;
@@ -61,6 +62,7 @@ public class RetryTests extends ApplicationTests {
                 return new Object();
             }
 
+
             /***
              * DefaultListenerSupport.open
              * retryMethod
@@ -73,6 +75,10 @@ public class RetryTests extends ApplicationTests {
                 System.out.println("retryMethod");
                 int i = 1 / 0;
             }
+        }, (retryContext) -> {
+            Throwable lastThrowable = retryContext.getLastThrowable();
+            System.err.println(ExceptionUtils.getStackTrace(lastThrowable));
+            return null;
         });
 
     }
