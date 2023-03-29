@@ -20,6 +20,7 @@
         <module>spring-batch</module>
         <module>spring-retry</module>
         <module>concurrent</module>
+        <module>core</module>
     </modules>
 
     <properties>

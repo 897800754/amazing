@@ -1,4 +1,4 @@
-package design.proxy;
+package cn.cg.proxy;
 
 import java.lang.reflect.Proxy;
 
