@@ -12,14 +12,12 @@
 
     <modules>
         <module>leetcode</module>
-        <module>clazz-loader</module>
         <module>design</module>
         <module>jol</module>
         <module>bytebuddy</module>
         <module>spring-validate</module>
         <module>spring-batch</module>
         <module>spring-retry</module>
-        <module>concurrent</module>
         <module>core</module>
     </modules>
 
