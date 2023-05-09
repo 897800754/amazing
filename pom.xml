@@ -19,6 +19,7 @@
         <module>spring-batch</module>
         <module>spring-retry</module>
         <module>core</module>
+        <module>sharding-jdbc</module>
     </modules>
 
     <properties>
@@ -52,6 +53,7 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
     </dependencies>
 
 

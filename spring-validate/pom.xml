@@ -7,9 +7,9 @@
         <artifactId>amazing</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>spring</artifactId>
+    <artifactId>spring-validate</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-learn</name>
+    <name>spring-validate</name>
 
     <dependencies>
         <dependency>

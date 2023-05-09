@@ -1,6 +1,5 @@
 package cn.cg.spi;
 
-import java.util.Iterator;
 import java.util.ServiceLoader;
 
 /**
@@ -11,12 +10,8 @@ public class Main {
 
     public static void main(String[] args) {
         ServiceLoader<Logger> load = ServiceLoader.load(Logger.class);
-        Iterator<Logger> iterator = load.iterator();
-        while (iterator.hasNext()) {
-            Logger next = iterator.next();
+        for (Logger next : load) {
             next.debug("123");
-
         }
-
     }
 }
