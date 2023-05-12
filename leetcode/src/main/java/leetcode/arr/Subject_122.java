@@ -13,7 +13,7 @@ package leetcode.arr;
  * @author: cg
  * @date: 2023-04-21 17:47
  **/
-public class Arr02 {
+public class Subject_122 {
 
     public static void main(String[] args) {
         int[] req = new int[]{7, 1, 5, 3, 6, 4};

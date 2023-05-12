@@ -10,7 +10,7 @@ import java.util.Arrays;
  * @author: cg
  * @date: 2023-04-21 17:19
  **/
-public class Arr01 {
+public class Subject_26 {
     public static void main(String[] args) {
         int[] req = new int[]{1, 1, 2, 3, 3, 5};
         int i = removeDuplicates(req);

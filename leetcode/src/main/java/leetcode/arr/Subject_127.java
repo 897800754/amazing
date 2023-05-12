@@ -1,9 +1,10 @@
-package leetcode;
+package leetcode.arr;
 
 import java.util.HashSet;
+import java.util.Set;
 
 /**
- * https://leetcode.cn/problems/contains-duplicate/?envType=study-plan&id=shu-ju-jie-gou-ru-men&plan=data-structures&plan_progress=b45legm
+ * https://leetcode.cn/problems/contains-duplicate/description/
  * 给你一个整数数组 nums 。如果任一值在数组中出现 至少两次 ，返回 true ；如果数组中每个元素互不相同，返回 false 。
  * <p>
  * <p>
@@ -19,29 +20,31 @@ import java.util.HashSet;
  * <p>
  * 输入：nums = [1,1,1,3,3,4,3,2,4,2]
  * 输出：true
- * <p>
- * <p>
- * 提示：
- * <p>
- * 1 <= nums.length <= 105
- * -109 <= nums[i] <= 109
  *
  * @author: cg
- * @date: 2023-02-05 23:14
+ * @date: 2023-04-21 17:47
  **/
-public class Subject217 {
-    public static void main(String[] args) {
+public class Subject_127 {
 
+    public static void main(String[] args) {
+        int[] req1 = new int[]{-1, -100, 3, 99};
+        boolean b = containsDuplicate(req1);
+        System.out.println(b);
     }
 
-    public boolean containsDuplicate(int[] nums) {
-        HashSet<Integer> integers = new HashSet<>();
+    public static boolean containsDuplicate(int[] nums) {
+        Set<Integer> set = new HashSet<>();
         for (int num : nums) {
-            if (integers.contains(num)) {
+            if (set.contains(num)) {
                 return true;
+            } else {
+                set.add(num);
             }
-            integers.add(num);
         }
         return false;
     }
 }
+
+
+
+
