@@ -1,5 +1,7 @@
 package leetcode.structure.link;
 
+import java.util.ArrayList;
+
 import static leetcode.structure.link.LinkUtils.toNode;
 import static leetcode.structure.link.LinkUtils.toPrint;
 
@@ -26,6 +28,41 @@ public class Subject_234_回文链表 {
      * 思路2:转换为数组回文数问题
      */
     public static boolean isPalindrome(ListNode head) {
+        ArrayList<Integer> list = new ArrayList<>();
+        while (head != null) {
+            list.add(head.val);
+            head = head.next;
+        }
+        int start = 0;
+        int end = list.size() - 1;
+
+        while (start < end) {
+            if (!list.get(start).equals(list.get(end))) {
+                return false;
+            }
+            start++;
+            end--;
+        }
+        return true;
+    }
+
+
+    public static boolean isPalindrome0(ListNode head) {
+        ArrayList<Integer> list = new ArrayList<>();
+        while (head != null) {
+            list.add(head.val);
+            head = head.next;
+        }
+        int start = 0;
+        int end = list.size() - 1;
+
+        while (start < end) {
+            if (!list.get(start).equals(list.get(end))) {
+                return false;
+            }
+            start++;
+            end--;
+        }
         return true;
     }
 
