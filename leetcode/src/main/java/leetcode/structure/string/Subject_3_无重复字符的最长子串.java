@@ -1,5 +1,7 @@
 package leetcode.structure.string;
 
+import java.util.HashSet;
+
 /**
  * https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/
  *
@@ -8,7 +10,9 @@ package leetcode.structure.string;
  **/
 public class Subject_3_无重复字符的最长子串 {
     public static void main(String[] args) {
-        System.out.println(lengthOfLongestSubstring("bbbbb"));
+        System.out.println(lengthOfLongestSubstring("au"));
+//        System.out.println(lengthOfLongestSubstring("abcabcbb"));
+//        System.out.println(lengthOfLongestSubstring("pwwkew"));
     }
 
     /**
@@ -23,38 +27,32 @@ public class Subject_3_无重复字符的最长子串 {
      * @return
      */
     public static int lengthOfLongestSubstring(String s) {
-        if (s.length() == 0) {
-            return 0;
+        if (s.length() == 0 || s.length() == 1) {
+            return s.length();
         }
-        int[] ints = new int[26];
+//        if (s.length() == 2) {
+//            return s.charAt(0) == s.charAt(1) ? 1 : 2;
+//        }
+
         int left = 0;
         int right = 0;
-        int maxLen = 1;
+        HashSet<Character> characters = new HashSet<>();
+
+        int maxLen = 0;
 
         while (right < s.length()) {
-            char c = s.charAt(right);
-            int index = c - 'a';
-            if (ints[index] == 0) {
-                ints[index]++;
-                maxLen = Math.max(maxLen, right - left + 1);
-                right++;
-            } else if (ints[index] == 1) {
-                //说明重复了
-                right++;
-                ints[index]++;
-                ints[left]--;
+
+            if (characters.contains(s.charAt(right))) {
+                maxLen = Math.max(characters.size(), maxLen);
+                characters.remove(s.charAt(left));
                 left++;
-                while (left <= right) {
-                    if (ints[s.charAt(left) - 'a'] > 1) {
-                        //说明继续要向→走
-                        ints[s.charAt(left) - 'a']--;
-                        left++;
-                    } else {
-                        break;
-                    }
-                }
+            } else {
+                characters.add(s.charAt(right));
+                right++;
             }
         }
-        return maxLen;
+
+        return Math.max(characters.size(), maxLen);
+
     }
 }

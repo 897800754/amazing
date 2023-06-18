@@ -12,8 +12,40 @@ public class Subject_75_颜色分类 {
 
     public static void main(String[] args) {
         int[] ints = {2, 0, 2, 1, 1, 0};
-        sortColors(ints);
+//        int[] ints = {1, 2, 0};
+        sortColors0(ints);
         System.out.println(Arrays.toString(ints));
+    }
+
+
+    /**
+     * 对撞指针
+     * P1:左指针
+     * P2:右指针
+     *
+     * @param nums
+     */
+    public static void sortColors0(int[] nums) {
+        int p1 = 0;
+        int p2 = nums.length - 1;
+
+        for (int i = 0; i <= p2; i++) {
+            if (nums[i] == 0) {
+                int temp = nums[i];
+                nums[i] = nums[p1];
+                nums[p1] = temp;
+                p1++;
+            } else if (nums[i] == 2) {
+                int temp = nums[i];
+                nums[i] = nums[p2];
+                nums[p2] = temp;
+                p2--;
+                i--;
+
+            } else {
+
+            }
+        }
     }
 
     /**

@@ -11,7 +11,7 @@ import java.util.Set;
  * @author: cg
  * @date: 2023-04-21 17:47
  **/
-public class Subject_22_括号生成_TODO {
+public class Subject_22_括号生成 {
 
     public static void main(String[] args) {
         System.out.println(generateParenthesis(2));

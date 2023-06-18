@@ -1,4 +1,4 @@
-package leetcode.algorithm.dynamic;
+package leetcode.algorithm.greedy;
 
 /**
  * https://leetcode.cn/problems/jump-game/
@@ -9,6 +9,10 @@ package leetcode.algorithm.dynamic;
  **/
 public class Subject_55_跳跃游戏_TODO {
     public static void main(String[] args) {
+
+        System.out.println(canJump(new int[]{2, 3, 1, 1, 4}));
+
+        System.out.println(canJump(new int[]{3, 2, 1, 0, 4}));
 
     }
 
@@ -26,8 +30,13 @@ public class Subject_55_跳跃游戏_TODO {
      * @param nums
      * @return
      */
-    public boolean canJump(int[] nums) {
-
-
+    public static boolean canJump(int[] nums) {
+        int maxIndex = 0;
+        int pre = 0;
+        for (int i = 0; i < nums.length; i++) {
+            pre = Math.max(pre, nums[i] + i);
+            maxIndex = Math.max(pre, maxIndex);
+        }
+        return nums.length - 1 <= maxIndex;
     }
 }

@@ -2,7 +2,6 @@ package leetcode.structure.arr;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 
 /**
@@ -15,51 +14,68 @@ public class Subject_15_三数之和_TODO {
 
     public static void main(String[] args) {
 
-        System.out.println(threeSum(new int[]{-1, 0, 1, 2, -1, -4}));
+        System.out.println(threeSum(new int[]{0, 3, 0, 1, 1, -1, -5, -5, 3, -3, -3, 0}));
     }
 
     /**
-     * 暴力解,遍历三次
+     * 难点:如果将等于0的数组去重
+     * <p>
+     * 排序+双指针
+     * 1.先对数组进行排序
+     * 2.固定一个位置,双指针判断
      *
      * @param nums
      * @return
      */
     public static List<List<Integer>> threeSum(int[] nums) {
-        ArrayList<List<Integer>> lists = new ArrayList<>();
+        if (nums == null || nums.length < 3) {
+            return new ArrayList<>();
+        }
+        Arrays.sort(nums);
 
-        for (int i = 0; i < nums.length - 2; i++) {
-            for (int i1 = i + 1; i1 < nums.length - 1; i1++) {
-                for (int j = i1 + 1; j < nums.length; j++) {
-                    if (i != i1 && i != j && i1 != j && (nums[i] + nums[i1] + nums[j] == 0)) {
-                        //检查是否重复
-                        List<Integer> integers = Arrays.asList(nums[i], nums[i1], nums[j]);
-                        if (check(lists, integers)) {
-                            lists.add(integers);
-                        }
+        List<List<Integer>> res = new ArrayList<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > 0) {
+                break;
+            }
+            //重复
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+
+            int start = i + 1;
+            int end = nums.length - 1;
+
+            while (start < end) {
+                ///判断三个数之和
+                int ans = nums[i] + nums[start] + nums[end];
+                if (ans > 0) {
+                    end--;
+                } else if (ans < 0) {
+                    start++;
+                } else {
+                    List<Integer> subList = new ArrayList<>();
+                    subList.add(nums[i]);
+                    subList.add(nums[start]);
+                    subList.add(nums[end]);
+                    res.add(subList);
+                    while (start < end && nums[start] == nums[start + 1]) {
+                        start = start + 1;
                     }
+                    while (start < end && nums[end] == nums[end - 1]) {
+                        end = end - 1;
+                    }
+                    start = start + 1;
+                    end = end - 1;
                 }
             }
         }
-        return lists;
+
+        return res;
     }
 
-    private static boolean check(ArrayList<List<Integer>> lists, List<Integer> integers) {
-        HashSet<Integer> integers2 = new HashSet<>(integers);
-        for (List<Integer> list : lists) {
-            HashSet<Integer> integers1 = new HashSet<>(list);
-            boolean flag = true;
-            for (Integer integer : integers1) {
-                if (!integers2.contains(integer)) {
-                    flag = false;
-                    break;
-                }
-            }
-            if (flag) {
-                return false;
-            }
-        }
-        return true;
-    }
+
 }
 
 

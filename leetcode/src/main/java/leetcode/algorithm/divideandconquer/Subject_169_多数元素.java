@@ -3,7 +3,7 @@ package leetcode.algorithm.divideandconquer;
 import java.util.HashMap;
 
 /**
- * https://leetcode.cn/problems/remove-element/
+ * https://leetcode.cn/problems/majority-element/
  *
  * @author: cg
  * @date: 2023-04-21 17:47
