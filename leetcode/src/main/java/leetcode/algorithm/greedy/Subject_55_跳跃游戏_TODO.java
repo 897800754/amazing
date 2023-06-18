@@ -1,12 +1,11 @@
 package leetcode.algorithm.dynamic;
 
 /**
- * https://leetcode.cn/problems/maximum-subarray/description/
+ * https://leetcode.cn/problems/jump-game/
  *
  * @author: cg
  * @date: 2023-05-10 11:12
  * <p>
- * f(x) =
  **/
 public class Subject_55_跳跃游戏_TODO {
     public static void main(String[] args) {
@@ -28,6 +27,7 @@ public class Subject_55_跳跃游戏_TODO {
      * @return
      */
     public boolean canJump(int[] nums) {
-        return false;
+
+
     }
 }
