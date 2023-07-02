@@ -24,7 +24,7 @@
  * dp[i]：表示以 nums[i] 结尾 的 连续 子数组的最大和。
  * (3)状态转移方程
  * <p>
- * if(dp[i-1]>0) dp[i] = dp[i-1]+num[i]
+ * if(dp[i-1]>0) dp[i] =s'x dp[i-1]+num[i]
  * 或者
  * if(num[i-1]<0) dp[i] = num[i]
  * (4)dp数组(状态)初始化
