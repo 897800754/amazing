@@ -16,7 +16,13 @@ public class Subject_931_下降路径最小和 {
 
     public static void main(String[] args) {
 
-
+        System.out.println(minFallingPathSum(
+                new int[][]{
+                        {2, 1, 3},
+                        {6, 5, 4},
+                        {7, 8, 9}
+                }
+        ));
     }
 
     /**
@@ -25,7 +31,7 @@ public class Subject_931_下降路径最小和 {
      * @param matrix
      * @return
      */
-    public int minFallingPathSum(int[][] matrix) {
+    public static int minFallingPathSum(int[][] matrix) {
         //由于无后效性,只需要使用len*2的一维数组作为dp数组
         //遍历次数为偶数,元素放在[0,len-1],为奇数放在[len,2*len-1]
         int[] dp = new int[matrix.length * 2];
@@ -35,17 +41,38 @@ public class Subject_931_下降路径最小和 {
         }
 
         for (int i = 1; i < matrix.length; i++) {
-            int beforeDpIndex = i % 2 == 1 ? matrix.length : 0;
+
+            int beforeDpIndex = i % 2 == 0 ? matrix.length : 0;
+
             int startDpIndex = i % 2 == 0 ? 0 : matrix.length;
 
+            //最左侧
+            dp[startDpIndex] = Math.min(dp[beforeDpIndex], dp[beforeDpIndex + 1]) + matrix[i][0];
+            startDpIndex++;
+            beforeDpIndex++;
+            //中间
             for (int j = 1; j < matrix[i].length - 1; j++) {
+                dp[startDpIndex] = Math.min(Math.min(dp[beforeDpIndex - 1], dp[beforeDpIndex]), dp[beforeDpIndex + 1]) + matrix[i][j];
+                startDpIndex++;
+                beforeDpIndex++;
+            }
+            //最右侧
+            dp[startDpIndex] = Math.min(dp[beforeDpIndex - 1], dp[beforeDpIndex]) + matrix[i][matrix[i].length - 1];
+
+            if (i == matrix.length - 1) {
+                //最后一行了
+                //遍历数组
+                int min = Integer.MAX_VALUE;
+                int limit = startDpIndex >= matrix.length ? matrix.length * 2 : matrix.length;
+
+                for (int j = startDpIndex >= matrix.length ? matrix.length : 0; j < limit; j++) {
+                    min = Math.min(dp[j], min);
+                }
+                return min;
 
             }
-//            if ()
         }
-
-
-        return 0;
+        return matrix[0][0];
     }
 
 }
