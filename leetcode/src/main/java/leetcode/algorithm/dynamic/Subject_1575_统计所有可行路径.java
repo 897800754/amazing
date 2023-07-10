@@ -39,8 +39,8 @@ public class Subject_1575_统计所有可行路径 {
      * 当fuel>=0且 start!=finish时,
      */
     public static int countRoutes0(int[] locations, int start, int finish, int fuel) {
-
-
+        return -1;
+        //todo
     }
 
     /**
