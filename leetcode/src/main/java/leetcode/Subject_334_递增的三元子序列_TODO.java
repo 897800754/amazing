@@ -6,7 +6,7 @@ package leetcode;
  * @author: cg
  * @date: 2023-04-21 17:47
  **/
-public class Subject_334_递增的三元子序列 {
+public class Subject_334_递增的三元子序列_TODO {
 
     public static void main(String[] args) {
 

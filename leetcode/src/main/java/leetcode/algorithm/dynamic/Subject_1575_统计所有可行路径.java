@@ -2,9 +2,11 @@ package leetcode.algorithm.dynamic;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
+ * TODO 想不明白
  * 类名称: Subject_1575_统计所有可行路径
  * 创建人: chengang
  * 创建时间: 2023-07-10 15:48:42
@@ -24,10 +26,18 @@ import java.util.List;
 public class Subject_1575_统计所有可行路径 {
 
     public static void main(String[] args) {
-        System.out.println(countRoutes(new int[]{1, 2, 3}, 0, 2, 40));
-//        System.out.println(countRoutes(new int[]{4, 3, 1}, 1, 0, 6));
+        System.out.println(countRoutes0(new int[]{1, 2, 3}, 0, 2, 40));
+//        System.out.println(countRoutes0(new int[]{4, 3, 1}, 1, 0, 6));
+//        System.out.println(countRoutes0(new int[]{5, 2, 1}, 0, 2, 3));
 
     }
+
+    static int mod = 1000000007;
+
+    // 缓存器：用于记录「特定状态」下的结果
+    // cache[i][fuel] 代表从位置 i 出发，当前剩余的油量为 fuel 的前提下，到达目标位置的「路径数量」
+    static int[][] cache;
+
 
     /**
      * @param locations 城市位置数组
@@ -35,34 +45,81 @@ public class Subject_1575_统计所有可行路径 {
      * @param finish    目的地城市
      * @param fuel      汽油总量
      * @return 所有可能得路径
-     * <p>
-     * 当fuel>=0且 start!=finish时,
+     * 剪枝场景1:有油到达终点
+     * 2.没有油了
+     *
+     * <p>*
+     * dfs
      */
     public static int countRoutes0(int[] locations, int start, int finish, int fuel) {
-        return -1;
-        //todo
+        int n = locations.length;
+
+        // 初始化缓存器
+        // 之所以要初始化为 -1
+        // 是为了区分「某个状态下路径数量为 0」和「某个状态尚未没计算过」两种情况
+        cache = new int[n][fuel + 1];
+        for (int i = 0; i < n; i++) {
+            Arrays.fill(cache[i], -1);
+        }
+
+        return dfs(locations, start, finish, fuel);
     }
 
+
     /**
-     * 记录所有路径所需要的油量
-     * k ->
-     * dp[k]
+     * 计算「路径数量」
      *
-     * @param locations 城市位置数组
-     * @param start     起始城市
-     * @param finish    目的地城市
-     * @param fuel      汽油总量
-     * @return 所有可能得路径
-     * 回溯算法貌似会超出内存的限制
+     * @param ls   入参 locations
+     * @param u    当前所在位置（ls 的下标）
+     * @param end  目标哦位置（ls 的下标）
+     * @param fuel 剩余油量
+     * @return 在位置 u 出发，油量为 fuel 的前提下，到达 end 的「路径数量」
      */
-    public static int countRoutes(int[] locations, int start, int finish, int fuel) {
-        //回溯+剪枝
-        //剪枝条件 1:汽油不够了.2:到达目的地了
-        ArrayList<List<Integer>> res = new ArrayList<>();
-        List<Integer> path = new ArrayList<>();
-        backtrack(locations, start, start, start, finish, fuel, res, path);
-        System.out.println(res);
-        return res.size();
+    static int dfs(int[] ls, int u, int end, int fuel) {
+        // 如果缓存器中已经有答案，直接返回
+        if (cache[u][fuel] != -1) {
+            return cache[u][fuel];
+        }
+
+        int n = ls.length;
+        // base case 1：如果油量为 0，且不在目标位置
+        // 将结果 0 写入缓存器并返回
+        if (fuel == 0 && u != end) {
+            cache[u][fuel] = 0;
+            return 0;
+        }
+
+        // base case 2：油量不为 0，且无法到达任何位置
+        // 将结果 0 写入缓存器并返回
+        boolean hasNext = false;
+        for (int i = 0; i < n; i++) {
+            if (i != u) {
+                int need = Math.abs(ls[u] - ls[i]);
+                if (fuel >= need) {
+                    hasNext = true;
+                    break;
+                }
+            }
+        }
+        if (fuel != 0 && !hasNext) {
+            cache[u][fuel] = u == end ? 1 : 0;
+            return cache[u][fuel];
+        }
+
+        // 计算油量为 fuel，从位置 u 到 end 的路径数量
+        // 由于每个点都可以经过多次，如果 u = end，那么本身就算一条路径
+        int sum = u == end ? 1 : 0;
+        for (int i = 0; i < n; i++) {
+            if (i != u) {
+                int need = Math.abs(ls[i] - ls[u]);
+                if (fuel >= need) {
+                    sum += dfs(ls, i, end, fuel - need);
+                    sum %= mod;
+                }
+            }
+        }
+        cache[u][fuel] = sum;
+        return sum;
     }
 
     /**
