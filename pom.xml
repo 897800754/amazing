@@ -24,6 +24,9 @@
         <module>zookeeper</module>
         <module>docker</module>
         <module>bloomfilter</module>
+        <module>spring-kafka</module>
+
+        <module>spring-elastic</module>
     </modules>
 
     <properties>
