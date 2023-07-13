@@ -6,7 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * TODO 想不明白
+ * TODO 想不明白 做不出来
  * 类名称: Subject_1575_统计所有可行路径
  * 创建人: chengang
  * 创建时间: 2023-07-10 15:48:42
@@ -23,7 +23,7 @@ import java.util.List;
  * <p>
  * 由于答案可能很大， 请将它对 10^9 + 7 取余后返回。
  */
-public class Subject_1575_统计所有可行路径 {
+public class Subject_1575_统计所有可行路径_TODO {
 
     public static void main(String[] args) {
         System.out.println(countRoutes0(new int[]{1, 2, 3}, 0, 2, 40));

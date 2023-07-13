@@ -1,6 +1,7 @@
 package leetcode.structure.tree;
 
 /**
+ * TODO 题目看不懂
  * https://leetcode.cn/problems/binary-tree-paths/
  *
  * @author: cg
@@ -20,61 +21,53 @@ public class Subject_998_最大二叉树II_TODO {
         right.left = rightLeft;
 
         parent.right = right;
-        TreeNode treeNode = insertIntoMaxTree(parent, 5);
-        System.out.println(treeNode);
+
+//        TreeNode treeNode = insertIntoMaxTree(parent, 5);
+//        System.out.println(treeNode);
 
     }
 
-    public static TreeNode insertIntoMaxTree(TreeNode root, int val) {
-        //将节点插入到指定的位置.
-        insert(root, root, val);
-        return root;
-    }
+//    public static TreeNode insertIntoMaxTree(TreeNode root, int val) {
+//        if (root == null) {
+//            return null;
+//        }
+//
+//        TreeNode dmTreeNode = new TreeNode();
+//        dmTreeNode.left = root;
+//        insertIntoMaxTree(dmTreeNode, root, val, true);
+//        return dmTreeNode.left;
+//    }
 
-    private static TreeNode insert(TreeNode parent, TreeNode current, int val) {
-        int val1 = current.val;
-
-        if (val1 > val) {
-            if (current.left == null) {
-                current.left = new TreeNode(val);
-                return current.left;
-            }
-            TreeNode insert = insert(current, current.left, val);
-            balance(parent, current.left, insert);
-            return current.left;
-        }
-        if (val1 < val) {
-            if (current.right == null) {
-                current.right = new TreeNode(val);
-                return current.right;
-            }
-            TreeNode insert = insert(current, current.right, val);
-            balance(parent, current.right, insert);
-            return current.right;
-        }
-        return null;
-
-    }
-
-
-    private static void balance(TreeNode parentParent, TreeNode parent, TreeNode insertTree) {
-        //如果插入节点的值大于其父节点,那么进行位置替换
-        if (parent.val < insertTree.val) {
-            TreeNode temp = parent;
-            TreeNode leftTemp = parent.left;
-            TreeNode rightTemp = parent.right;
-            TreeNode left = insertTree.left;
-            TreeNode right = insertTree.right;
-            parent = insertTree;
-            parent.left = leftTemp;
-            parent.right = temp;
-            temp.left = left;
-            temp.right = right;
-            parentParent.right = parent;
-
-        }
-
-    }
+    /**
+     * @param compareNodeParent
+     * @param compareNode
+     * @param val
+     * @param flag              true->左,false->右
+     * @return
+     */
+//    public static void insertIntoMaxTree(TreeNode compareNodeParent, TreeNode compareNode, int val, boolean flag) {
+//        if (compareNode == null) {
+//            compareNode = new TreeNode(val);
+//        }
+//        //比较值
+//        int compareValue = compareNode.val;
+//
+//        if (compareValue > val) {
+//            //继续向下找
+//            insertIntoMaxTree(compareNode, compareNode.left, val, true);
+////            insertIntoMaxTree(compareNode, compareNode.left, val);
+//        } else {
+//            //进行替换
+//            if (flag) {
+//                //替换parent的左子节点
+//                compareNodeParent.left = new TreeNode(val);
+//                compareNodeParent.left.left = compareNode;
+//            } else {
+//                compareNodeParent.right = new TreeNode(val);
+//                compareNodeParent.right.right = compareNode;
+//            }
+//        }
+//    }
 
 
 }

@@ -7,9 +7,9 @@
         <artifactId>amazing</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>trx</artifactId>
+    <artifactId>spring-trx</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>trx</name>
+    <name>spring-trx</name>
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>8</java.version>
