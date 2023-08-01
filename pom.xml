@@ -26,6 +26,7 @@
         <module>bloomfilter</module>
         <module>spring-kafka</module>
         <module>spring-elastic</module>
+        <module>liteflow</module>
     </modules>
 
     <properties>
