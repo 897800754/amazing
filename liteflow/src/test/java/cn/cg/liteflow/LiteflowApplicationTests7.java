@@ -8,17 +8,17 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 
 @SpringBootTest
-class LiteflowApplicationTests6 {
+class LiteflowApplicationTests7 {
 
     @Autowired
     private FlowExecutor flowExecutor;
 
     /**
-     * 条件循环组件
+     * 数据上下文
      */
     @Test
     void contextLoads() {
-        LiteflowResponse response = flowExecutor.execute2Resp("chain7", "arg");
+        LiteflowResponse response = flowExecutor.execute2Resp("chain101", "arg");
         System.out.println(response.getCode());
     }
 

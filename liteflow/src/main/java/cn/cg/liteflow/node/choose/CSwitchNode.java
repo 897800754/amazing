@@ -11,6 +11,7 @@ import com.yomahub.liteflow.core.NodeSwitchComponent;
 public class CSwitchNode extends NodeSwitchComponent {
     @Override
     public String processSwitch() throws Exception {
+        System.out.println("C do something ....");
         return "a";
     }
 }

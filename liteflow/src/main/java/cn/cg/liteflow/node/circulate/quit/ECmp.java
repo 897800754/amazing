@@ -8,6 +8,6 @@ public class ECmp extends NodeBreakComponent {
     @Override
     public boolean processBreak() throws Exception {
         //这里根据业务去返回break的结果
-        return false;
+        return true;
     }
 }

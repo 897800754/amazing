@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE flow PUBLIC  "liteflow" "liteflow.dtd">
+
+<flow>
+    <chain name="chain1">
+        THEN(a, b);
+    </chain>
+
+    <chain name="chain2">
+        <!--基于nodeId的选择节点-->
+        SWITCH(c).to(a,b);
+    </chain>
+
+    <chain name="chain3">
+        <!--条件表达式 If 三元表达式-->
+        IF(x,a,b);
+    </chain>
+    <chain name="chain4">
+        <!--循环次数-->
+        FOR(f).DO(THEN(a));
+    </chain>
+
+    <chain name="chain5">
+        <!--条件循环-->
+        WHILE(w).DO(THEN(a));
+    </chain>
+
+    <chain name="chain6">
+        <!--迭代循环-->
+        ITERATOR(xx).DO(THEN(d));
+    </chain>
+
+
+</flow>

@@ -1,4 +1,4 @@
-package cn.cg.liteflow.node;
+package cn.cg.liteflow.node.normal;
 
 import com.yomahub.liteflow.core.NodeComponent;
 import lombok.SneakyThrows;

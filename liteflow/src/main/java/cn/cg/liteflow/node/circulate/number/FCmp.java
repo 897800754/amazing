@@ -1,4 +1,4 @@
-package cn.cg.liteflow.node.circulate;
+package cn.cg.liteflow.node.circulate.number;
 
 import com.yomahub.liteflow.annotation.LiteflowComponent;
 import com.yomahub.liteflow.core.NodeForComponent;

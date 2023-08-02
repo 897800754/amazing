@@ -6,14 +6,11 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import javax.annotation.Resource;
-
 
 @SpringBootTest
-class LiteflowApplicationTests4 {
+class LiteflowApplicationTests5 {
 
     @Autowired
-    @Resource
     private FlowExecutor flowExecutor;
 
     /**
@@ -21,7 +18,7 @@ class LiteflowApplicationTests4 {
      */
     @Test
     void contextLoads() {
-        LiteflowResponse response = flowExecutor.execute2Resp("chain5", "arg");
+        LiteflowResponse response = flowExecutor.execute2Resp("chain6", "arg");
         System.out.println(response.getCode());
     }
 
