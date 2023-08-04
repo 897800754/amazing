@@ -27,6 +27,8 @@
         <module>spring-kafka</module>
         <module>spring-elastic</module>
         <module>liteflow</module>
+        <module>mybatis-flex</module>
+        <module>spring-security</module>
     </modules>
 
     <properties>

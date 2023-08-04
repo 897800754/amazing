@@ -30,14 +30,15 @@ class MybatisFlexBaseTests {
 
     /**
      * 单表查询
+     * QueryMethods.max()
      */
     @Test
     public void query() {
+
         QueryWrapper queryWrapper = QueryWrapper.create()
                 .select()
                 .where(ACCOUNT.AGE.eq(18));
         Account account = accountMapper.selectOneByQuery(queryWrapper);
-
         System.out.println(account);
     }
 
