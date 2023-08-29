@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.RecordMetadata;
+import org.apache.kafka.clients.producer.internals.DefaultPartitioner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -33,16 +34,21 @@ public class KfKTest {
     @Resource
     private ObjectMapper objectMapper;
 
+    /**
+     * 轮询分发到各个partition
+     *
+     * @see DefaultPartitioner#partition(java.lang.String, java.lang.Object, byte[], java.lang.Object, byte[], org.apache.kafka.common.Cluster)
+     */
     @Test
     @SneakyThrows
     public void test1() {
-        int i = 100;
+        int i = 10000;
         while ((i = i - 1) > 0) {
             Model model = new Model();
             model.setId(100L);
             model.setName(String.valueOf(i));
-            ListenableFuture<SendResult<String, Object>> future = kafkaTemplate.send("test", objectMapper.writeValueAsString(model));
-            System.out.println("sendMessage,result:" + objectMapper.writeValueAsString(future.get()));
+            ListenableFuture<SendResult<String, Object>> future = kafkaTemplate.send("partition-test", objectMapper.writeValueAsString(model));
+            System.out.println("sendMessage,result:" + future.get());
         }
     }
 
@@ -58,7 +64,7 @@ public class KfKTest {
             model.setId(100L);
             model.setName(String.valueOf(i));
             ListenableFuture<SendResult<String, Object>> future = kafkaTemplate.send("partition-test", 0, "123", objectMapper.writeValueAsString(model));
-            System.out.println("sendMessage,result:" + objectMapper.writeValueAsString(future.get()));
+            System.out.println("sendMessage,result:" + future.get());
         }
     }
 

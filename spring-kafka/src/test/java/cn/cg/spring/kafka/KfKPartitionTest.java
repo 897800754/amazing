@@ -50,7 +50,9 @@ public class KfKPartitionTest {
     }
 
     /**
-     * 自定义
+     * 自定义消息路由策略
+     * 通过实现 Partitioner
+     * @see Partitioner
      */
     @Test
     @SneakyThrows
@@ -63,7 +65,7 @@ public class KfKPartitionTest {
             model.setName(String.valueOf(i));
             ListenableFuture<SendResult<String, Object>> future = kafkaTemplate.send("partition-test", String.valueOf(i), objectMapper.writeValueAsString(model));
             //同步模式
-            System.out.println("sendMessage,result:" + objectMapper.writeValueAsString(future.get()));
+            System.out.println("sendMessage,result:" + future.get().toString());
         }
     }
 
