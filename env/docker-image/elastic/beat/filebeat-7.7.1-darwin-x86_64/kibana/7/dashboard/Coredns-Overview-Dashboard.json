@@ -1,0 +1,146 @@
+{
+    "objects": [
+        {
+            "attributes": {
+                "description": "Overview of CoreDNS",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"\"}}"
+                },
+                "optionsJSON": "{\"hidePanelTitles\": false, \"useMargins\": true}",
+                "panelsJSON": "[{\"panelRefName\": \"panel_0\", \"version\": \"8.0.0-SNAPSHOT\", \"embeddableConfig\": {}, \"gridData\": {\"i\": \"1\", \"y\": 7, \"h\": 14, \"x\": 4, \"w\": 41}, \"panelIndex\": \"1\"}, {\"panelRefName\": \"panel_1\", \"version\": \"8.0.0-SNAPSHOT\", \"embeddableConfig\": {}, \"gridData\": {\"i\": \"2\", \"y\": 0, \"h\": 7, \"x\": 4, \"w\": 20}, \"panelIndex\": \"2\"}, {\"panelRefName\": \"panel_2\", \"version\": \"8.0.0-SNAPSHOT\", \"embeddableConfig\": {}, \"gridData\": {\"i\": \"3\", \"y\": 0, \"h\": 7, \"x\": 24, \"w\": 21}, \"panelIndex\": \"3\"}, {\"panelRefName\": \"panel_3\", \"version\": \"8.0.0-SNAPSHOT\", \"embeddableConfig\": {}, \"gridData\": {\"i\": \"4\", \"y\": 21, \"h\": 6, \"x\": 4, \"w\": 41}, \"panelIndex\": \"4\"}]",
+                "timeRestore": false,
+                "title": "[Filebeat CoreDNS] Overview",
+                "version": 1
+            },
+            "id": "53aa1f70-443e-11e9-8548-ab7fbe04f038",
+            "migrationVersion": {
+                "dashboard": "7.0.0"
+            },
+            "references": [
+                {
+                    "id": "3ad75810-4429-11e9-8548-ab7fbe04f038",
+                    "name": "panel_0",
+                    "type": "visualization"
+                },
+                {
+                    "id": "9dc640e0-4432-11e9-8548-ab7fbe04f038",
+                    "name": "panel_1",
+                    "type": "visualization"
+                },
+                {
+                    "id": "75743f70-443c-11e9-8548-ab7fbe04f038",
+                    "name": "panel_2",
+                    "type": "visualization"
+                },
+                {
+                    "id": "cfde7fb0-443d-11e9-8548-ab7fbe04f038",
+                    "name": "panel_3",
+                    "type": "visualization"
+                }
+            ],
+            "type": "dashboard",
+            "updated_at": "2019-03-11T20:43:54.420Z",
+            "version": "WzE0ODgsM10="
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\", \"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"\"}}"
+                },
+                "title": "Top Domains [Filebeat CoreDNS]",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"params\": {\"showLabel\": true, \"scale\": \"linear\", \"metric\": {\"accessor\": 0, \"aggType\": \"count\", \"format\": {\"id\": \"number\"}, \"params\": {}}, \"maxFontSize\": 72, \"orientation\": \"single\", \"minFontSize\": 18}, \"type\": \"tagcloud\", \"title\": \"Top Domains [Filebeat CoreDNS]\", \"aggs\": [{\"params\": {}, \"schema\": \"metric\", \"type\": \"count\", \"enabled\": true, \"id\": \"1\"}, {\"params\": {\"otherBucket\": false, \"orderBy\": \"1\", \"missingBucket\": false, \"otherBucketLabel\": \"Other\", \"size\": 10, \"missingBucketLabel\": \"Missing\", \"field\": \"coredns.query.name\", \"order\": \"desc\"}, \"schema\": \"segment\", \"type\": \"terms\", \"enabled\": true, \"id\": \"2\"}]}"
+            },
+            "id": "3ad75810-4429-11e9-8548-ab7fbe04f038",
+            "migrationVersion": {
+                "visualization": "7.0.0"
+            },
+            "references": [
+                {
+                    "id": "filebeat-*",
+                    "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                    "type": "index-pattern"
+                }
+            ],
+            "type": "visualization",
+            "updated_at": "2019-03-11T18:12:28.303Z",
+            "version": "WzE0ODMsM10="
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\", \"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"\"}}"
+                },
+                "title": "Total DNS Queries [Filebeat CoreDNS]",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"params\": {\"addLegend\": false, \"addTooltip\": true, \"type\": \"metric\", \"metric\": {\"labels\": {\"show\": true}, \"style\": {\"bgColor\": false, \"labelColor\": false, \"fontSize\": 60, \"subText\": \"\", \"bgFill\": \"#000\"}, \"metricColorMode\": \"None\", \"colorSchema\": \"Green to Red\", \"colorsRange\": [{\"to\": 10000, \"from\": 0}], \"percentageMode\": false, \"invertColors\": false, \"useRanges\": false}}, \"type\": \"metric\", \"title\": \"Total DNS Queries [Filebeat CoreDNS]\", \"aggs\": [{\"params\": {}, \"schema\": \"metric\", \"type\": \"count\", \"enabled\": true, \"id\": \"1\"}]}"
+            },
+            "id": "9dc640e0-4432-11e9-8548-ab7fbe04f038",
+            "migrationVersion": {
+                "visualization": "7.0.0"
+            },
+            "references": [
+                {
+                    "id": "filebeat-*",
+                    "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                    "type": "index-pattern"
+                }
+            ],
+            "type": "visualization",
+            "updated_at": "2019-03-11T19:19:39.757Z",
+            "version": "WzE0ODQsM10="
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\", \"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"\"}}"
+                },
+                "title": "Unique Domains [Filebeat CoreDNS]",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"params\": {\"addLegend\": false, \"addTooltip\": true, \"type\": \"metric\", \"metric\": {\"bucket\": {\"accessor\": 0, \"aggType\": \"terms\", \"format\": {\"params\": {\"otherBucketLabel\": \"Other\", \"missingBucketLabel\": \"Missing\", \"id\": \"string\"}, \"id\": \"terms\"}, \"params\": {}}, \"labels\": {\"show\": true}, \"style\": {\"bgColor\": false, \"labelColor\": false, \"fontSize\": 60, \"subText\": \"\", \"bgFill\": \"#000\"}, \"metrics\": [{\"accessor\": 0, \"aggType\": \"cardinality\", \"format\": {\"id\": \"number\"}, \"params\": {}}], \"metricColorMode\": \"None\", \"colorSchema\": \"Green to Red\", \"colorsRange\": [{\"to\": 10000, \"from\": 0}], \"percentageMode\": false, \"invertColors\": false, \"useRanges\": false}}, \"type\": \"metric\", \"title\": \"Unique Domains [Filebeat CoreDNS]\", \"aggs\": [{\"params\": {\"customLabel\": \"Unique Domains\", \"field\": \"coredns.query.name\"}, \"schema\": \"metric\", \"type\": \"cardinality\", \"enabled\": true, \"id\": \"1\"}]}"
+            },
+            "id": "75743f70-443c-11e9-8548-ab7fbe04f038",
+            "migrationVersion": {
+                "visualization": "7.0.0"
+            },
+            "references": [
+                {
+                    "id": "filebeat-*",
+                    "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                    "type": "index-pattern"
+                }
+            ],
+            "type": "visualization",
+            "updated_at": "2019-03-12T01:26:19.218Z",
+            "version": "WzE0OTMsM10="
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"tags:\\\"coredns\\\"\"}}"
+                },
+                "title": "Time Series Visualizer [Filebeat CoreDNS]",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"params\": {\"interval\": \"auto\", \"bar_color_rules\": [{\"id\": \"e1f6cda0-443e-11e9-94ba-69b05a5f82b8\"}], \"axis_scale\": \"normal\", \"type\": \"timeseries\", \"gauge_style\": \"half\", \"time_field\": \"@timestamp\", \"default_index_pattern\": \"filebeat-*\", \"index_pattern\": \"\", \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"axis_formatter\": \"number\", \"show_legend\": 1, \"axis_position\": \"left\", \"gauge_width\": 10, \"background_color_rules\": [{\"id\": \"65ad37b0-443f-11e9-94ba-69b05a5f82b8\"}], \"show_grid\": 1, \"gauge_inner_width\": 10, \"gauge_color_rules\": [{\"id\": \"6996a6e0-443f-11e9-94ba-69b05a5f82b8\"}], \"series\": [{\"point_size\": 1, \"chart_type\": \"line\", \"formatter\": \"number\", \"stacked\": \"none\", \"fill\": 0.5, \"metrics\": [{\"type\": \"count\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}], \"axis_position\": \"right\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"color\": \"#68BC00\", \"filter\": \"fileset.name:kubernetes\", \"terms_field\": \"fileset.name\", \"line_width\": 1, \"separate_axis\": 0, \"label\": \"CoreDNS Kubernetes\", \"split_mode\": \"filter\"}, {\"point_size\": 1, \"chart_type\": \"line\", \"formatter\": \"number\", \"stacked\": \"none\", \"fill\": 0.5, \"metrics\": [{\"type\": \"count\", \"id\": \"3c8999f1-443f-11e9-94ba-69b05a5f82b8\"}], \"axis_position\": \"right\", \"id\": \"3c8999f0-443f-11e9-94ba-69b05a5f82b8\", \"color\": \"#68BC00\", \"filter\": \"fileset.name:log\", \"line_width\": 1, \"separate_axis\": 0, \"label\": \"CoreDNS Native\", \"split_mode\": \"filter\"}]}, \"type\": \"metrics\", \"title\": \"Time Series Visualizer [Filebeat CoreDNS]\", \"aggs\": []}"
+            },
+            "id": "cfde7fb0-443d-11e9-8548-ab7fbe04f038",
+            "migrationVersion": {
+                "visualization": "7.0.0"
+            },
+            "references": [],
+            "type": "visualization",
+            "updated_at": "2019-03-11T20:51:52.103Z",
+            "version": "WzE0ODksM10="
+        }
+    ],
+    "version": "8.0.0-SNAPSHOT"
+}

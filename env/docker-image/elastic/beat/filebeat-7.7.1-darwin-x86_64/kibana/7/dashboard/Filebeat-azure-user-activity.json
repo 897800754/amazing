@@ -1,0 +1,330 @@
+{
+    "objects": [
+        {
+            "attributes": {
+                "description": "This dashboard shows expanded user activity in Azure cloud.",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": [{\"exists\": {\"field\": \"azure.activitylogs.identity.claims_initiated_by_user.fullname\"}, \"$state\": {\"store\": \"appState\"}, \"meta\": {\"key\": \"azure.activitylogs.identity.claims_initiated_by_user.fullname\", \"alias\": null, \"value\": \"exists\", \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\", \"disabled\": false, \"type\": \"exists\", \"negate\": false}}], \"query\": {\"language\": \"kuery\", \"query\": \"\"}}"
+                },
+                "optionsJSON": "{\"hidePanelTitles\": false, \"useMargins\": true}",
+                "panelsJSON": "[{\"panelRefName\": \"panel_0\", \"version\": \"7.4.0\", \"embeddableConfig\": {\"title\": \"\"}, \"gridData\": {\"i\": \"675f172f-dbec-44fe-b45c-fe854a967695\", \"y\": 0, \"h\": 4, \"x\": 0, \"w\": 8}, \"panelIndex\": \"675f172f-dbec-44fe-b45c-fe854a967695\"}, {\"panelRefName\": \"panel_1\", \"version\": \"7.4.0\", \"embeddableConfig\": {\"title\": \"\"}, \"gridData\": {\"i\": \"705596b5-db2e-4c45-875d-95d98bfb7ee8\", \"y\": 0, \"h\": 4, \"x\": 8, \"w\": 16}, \"panelIndex\": \"705596b5-db2e-4c45-875d-95d98bfb7ee8\"}, {\"panelRefName\": \"panel_2\", \"version\": \"7.4.0\", \"embeddableConfig\": {}, \"gridData\": {\"i\": \"ace19840-2084-45bd-bf86-9ab31b04a17b\", \"y\": 0, \"h\": 9, \"x\": 24, \"w\": 24}, \"panelIndex\": \"ace19840-2084-45bd-bf86-9ab31b04a17b\"}, {\"panelRefName\": \"panel_3\", \"title\": \"Users List\", \"version\": \"7.4.0\", \"embeddableConfig\": {\"title\": \"Users List\"}, \"gridData\": {\"i\": \"d4d708e1-d179-4688-8005-54e2162a82d2\", \"y\": 4, \"h\": 15, \"x\": 0, \"w\": 11}, \"panelIndex\": \"d4d708e1-d179-4688-8005-54e2162a82d2\"}, {\"panelRefName\": \"panel_4\", \"title\": \"Top Caller IPs\", \"version\": \"7.4.0\", \"embeddableConfig\": {\"title\": \"Top Caller IPs\"}, \"gridData\": {\"i\": \"5774219c-fb45-4480-bdfb-75a69bdc2cfe\", \"y\": 4, \"h\": 15, \"x\": 11, \"w\": 13}, \"panelIndex\": \"5774219c-fb45-4480-bdfb-75a69bdc2cfe\"}, {\"panelRefName\": \"panel_5\", \"version\": \"7.4.0\", \"embeddableConfig\": {}, \"gridData\": {\"i\": \"5deee186-fe00-4edc-9e5b-86d8d09f6550\", \"y\": 9, \"h\": 10, \"x\": 24, \"w\": 24}, \"panelIndex\": \"5deee186-fe00-4edc-9e5b-86d8d09f6550\"}, {\"panelRefName\": \"panel_6\", \"title\": \"Top Resource Groups\", \"version\": \"7.4.0\", \"embeddableConfig\": {\"vis\": {\"legendOpen\": false}, \"title\": \"Top Resource Groups\"}, \"gridData\": {\"i\": \"2fa13b32-c544-45f7-9132-620d09d121eb\", \"y\": 19, \"h\": 15, \"x\": 0, \"w\": 16}, \"panelIndex\": \"2fa13b32-c544-45f7-9132-620d09d121eb\"}, {\"panelRefName\": \"panel_7\", \"version\": \"7.4.0\", \"embeddableConfig\": {\"legendOpen\": false, \"vis\": {\"legendOpen\": true}}, \"gridData\": {\"h\": 7, \"y\": 19, \"w\": 17, \"i\": \"1a6dce1d-d039-4d18-87c7-1b700da676c2\", \"x\": 16}, \"panelIndex\": \"1a6dce1d-d039-4d18-87c7-1b700da676c2\"}, {\"panelRefName\": \"panel_8\", \"version\": \"7.4.0\", \"embeddableConfig\": {\"legendOpen\": false, \"vis\": {\"legendOpen\": true}}, \"gridData\": {\"h\": 8, \"y\": 26, \"w\": 17, \"i\": \"8fddd3bb-c1e6-4533-b075-1ab7361b3af0\", \"x\": 16}, \"panelIndex\": \"8fddd3bb-c1e6-4533-b075-1ab7361b3af0\"}, {\"panelRefName\": \"panel_9\", \"title\": \"Top Resource Types\", \"version\": \"7.4.0\", \"embeddableConfig\": {\"title\": \"Top Resource Types\"}, \"gridData\": {\"i\": \"84583e62-1aad-4f03-a25a-c4f9eaace8c0\", \"y\": 19, \"h\": 15, \"x\": 33, \"w\": 15}, \"panelIndex\": \"84583e62-1aad-4f03-a25a-c4f9eaace8c0\"}]",
+                "timeRestore": false,
+                "title": "[Filebeat Azure] User Activity",
+                "version": 1
+            },
+            "id": "87095750-f05a-11e9-90ec-112a988266d5",
+            "migrationVersion": {
+                "dashboard": "7.3.0"
+            },
+            "references": [
+                {
+                    "id": "filebeat-*",
+                    "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+                    "type": "index-pattern"
+                },
+                {
+                    "id": "c43855e0-f05a-11e9-90ec-112a988266d5",
+                    "name": "panel_0",
+                    "type": "visualization"
+                },
+                {
+                    "id": "b0471750-f05b-11e9-90ec-112a988266d5",
+                    "name": "panel_1",
+                    "type": "visualization"
+                },
+                {
+                    "id": "e0203fc0-f05f-11e9-90ec-112a988266d5",
+                    "name": "panel_2",
+                    "type": "visualization"
+                },
+                {
+                    "id": "52da1700-f05d-11e9-90ec-112a988266d5",
+                    "name": "panel_3",
+                    "type": "visualization"
+                },
+                {
+                    "id": "6ece76d0-f0cc-11e9-90ec-112a988266d5",
+                    "name": "panel_4",
+                    "type": "visualization"
+                },
+                {
+                    "id": "0dd135c0-f0cc-11e9-90ec-112a988266d5",
+                    "name": "panel_5",
+                    "type": "visualization"
+                },
+                {
+                    "id": "71b62ca0-ec1a-11e9-90ec-112a988266d5",
+                    "name": "panel_6",
+                    "type": "visualization"
+                },
+                {
+                    "id": "d91ce8d0-53e8-11ea-b1b7-7de801e1c297",
+                    "name": "panel_7",
+                    "type": "visualization"
+                },
+                {
+                    "id": "6db84660-53e9-11ea-b1b7-7de801e1c297",
+                    "name": "panel_8",
+                    "type": "visualization"
+                },
+                {
+                    "id": "9ed46680-f0ce-11e9-90ec-112a988266d5",
+                    "name": "panel_9",
+                    "type": "visualization"
+                }
+            ],
+            "type": "dashboard",
+            "updated_at": "2019-10-18T17:27:59.187Z",
+            "version": "WzkyNDUsMV0="
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"\"}}"
+                },
+                "title": "Navigation Users [Filebeat Azure]",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"params\": {\"openLinksInNewTab\": false, \"markdown\": \"### Azure Monitoring\\n\\n[Overview](#/dashboard/41e84340-ec20-11e9-90ec-112a988266d5) | [**Users**](#/dashboard/87095750-f05a-11e9-90ec-112a988266d5) | [Alerts](#/dashboard/0f559cc0-f0d5-11e9-90ec-112a988266d5) \", \"fontSize\": 10}, \"type\": \"markdown\", \"title\": \"Navigation Users [Filebeat Azure]\", \"aggs\": []}"
+            },
+            "id": "c43855e0-f05a-11e9-90ec-112a988266d5",
+            "migrationVersion": {
+                "visualization": "7.3.1"
+            },
+            "references": [],
+            "type": "visualization",
+            "updated_at": "2019-10-17T11:56:56.135Z",
+            "version": "WzQ5MzYsMV0="
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"\"}}"
+                },
+                "title": "User Filters [Filebeat Azure]",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"params\": {\"pinFilters\": false, \"updateFiltersOnChange\": true, \"useTimeFilter\": false, \"controls\": [{\"indexPatternRefName\": \"control_0_index_pattern\", \"fieldName\": \"azure.subscription_id\", \"options\": {\"dynamicOptions\": true, \"multiselect\": true, \"type\": \"terms\", \"size\": 100, \"order\": \"desc\"}, \"label\": \"Subscription\", \"type\": \"list\", \"id\": \"1517598395667\"}, {\"indexPatternRefName\": \"control_1_index_pattern\", \"fieldName\": \"azure.activitylogs.identity.claims_initiated_by_user.name\", \"options\": {\"dynamicOptions\": true, \"multiselect\": true, \"type\": \"terms\", \"size\": 100, \"order\": \"desc\"}, \"label\": \"User Email\", \"type\": \"list\", \"id\": \"1518843942322\"}]}, \"type\": \"input_control_vis\", \"title\": \"User Filters [Filebeat Azure]\", \"aggs\": []}"
+            },
+            "id": "b0471750-f05b-11e9-90ec-112a988266d5",
+            "migrationVersion": {
+                "visualization": "7.3.1"
+            },
+            "references": [
+                {
+                    "id": "filebeat-*",
+                    "name": "control_0_index_pattern",
+                    "type": "index-pattern"
+                },
+                {
+                    "id": "filebeat-*",
+                    "name": "control_1_index_pattern",
+                    "type": "index-pattern"
+                }
+            ],
+            "type": "visualization",
+            "updated_at": "2019-10-18T09:36:45.050Z",
+            "version": "Wzg0NTcsMV0="
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"\"}}"
+                },
+                "title": "User Activity Overview [Filebeat Azure]",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"params\": {\"default_timefield\": \"@timestamp\", \"axis_scale\": \"normal\", \"isModelInvalid\": false, \"time_field\": null, \"default_index_pattern\": \"metricbeat-*\", \"index_pattern\": \"filebeat-*\", \"interval\": \"auto\", \"axis_formatter\": \"number\", \"axis_position\": \"left\", \"filter\": {\"language\": \"kuery\", \"query\": \"event.dataset :\\\"azure.activitylogs\\\" and event.category :\\\"Administrative\\\" and azure.activitylogs.identity.claims_initiated_by_user.fullname :*\"}, \"show_legend\": 0, \"show_grid\": 1, \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"type\": \"timeseries\", \"series\": [{\"point_size\": 1, \"chart_type\": \"bar\", \"formatter\": \"number\", \"stacked\": \"none\", \"hide_in_legend\": 0, \"metrics\": [{\"type\": \"count\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}], \"axis_position\": \"right\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"fill\": \"0.4\", \"color\": \"rgba(1,155,143,1)\", \"filter\": \"\", \"split_filters\": [{\"color\": \"rgba(244,78,59,1)\", \"filter\": \"_exists_:identity.claims.name\", \"label\": \"\", \"id\": \"a5302500-1399-11e8-a699-f390e75f4dd5\"}], \"line_width\": 1, \"seperate_axis\": 0, \"label\": \"Actions\", \"split_mode\": \"everything\"}]}, \"type\": \"metrics\", \"title\": \"User Activity Overview [Filebeat Azure]\", \"aggs\": []}"
+            },
+            "id": "e0203fc0-f05f-11e9-90ec-112a988266d5",
+            "migrationVersion": {
+                "visualization": "7.3.1"
+            },
+            "references": [],
+            "type": "visualization",
+            "updated_at": "2019-10-18T17:27:33.254Z",
+            "version": "WzkyNDMsMV0="
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\", \"filter\": [], \"query\": {\"language\": \"lucene\", \"query\": \"\"}}"
+                },
+                "title": "Users List [Filebeat Azure]",
+                "uiStateJSON": "{\"vis\": {\"params\": {\"sort\": {\"direction\": null, \"columnIndex\": null}}}}",
+                "version": 1,
+                "visState": "{\"params\": {\"dimensions\": {\"buckets\": [{\"accessor\": 0, \"aggType\": \"terms\", \"format\": {\"params\": {\"otherBucketLabel\": \"Other\", \"missingBucketLabel\": \"Missing\", \"id\": \"string\"}, \"id\": \"terms\"}, \"params\": {}}, {\"accessor\": 1, \"aggType\": \"terms\", \"format\": {\"params\": {\"otherBucketLabel\": \"Other\", \"missingBucketLabel\": \"Missing\", \"id\": \"string\"}, \"id\": \"terms\"}, \"params\": {}}], \"metrics\": [{\"accessor\": 2, \"aggType\": \"cardinality\", \"format\": {\"id\": \"number\"}, \"params\": {}}, {\"accessor\": 3, \"aggType\": \"count\", \"format\": {\"id\": \"number\"}, \"params\": {}}]}, \"perPage\": 10, \"showMetricsAtAllLevels\": false, \"percentageCol\": \"\", \"sort\": {\"direction\": null, \"columnIndex\": null}, \"showPartialRows\": false, \"showTotal\": false, \"totalFunc\": \"sum\"}, \"type\": \"table\", \"title\": \"Users List [Filebeat Azure]\", \"aggs\": [{\"params\": {\"otherBucket\": false, \"orderBy\": \"1\", \"customLabel\": \"Email\", \"missingBucket\": false, \"otherBucketLabel\": \"Other\", \"size\": 20, \"missingBucketLabel\": \"Missing\", \"field\": \"azure.activitylogs.identity.claims_initiated_by_user.name\", \"order\": \"desc\"}, \"schema\": \"bucket\", \"type\": \"terms\", \"enabled\": true, \"id\": \"2\"}, {\"params\": {\"otherBucket\": false, \"orderBy\": \"1\", \"customLabel\": \"Name\", \"missingBucket\": false, \"otherBucketLabel\": \"Other\", \"size\": 5, \"missingBucketLabel\": \"Missing\", \"field\": \"azure.activitylogs.identity.claims_initiated_by_user.fullname\", \"order\": \"desc\"}, \"schema\": \"bucket\", \"type\": \"terms\", \"enabled\": true, \"id\": \"3\"}, {\"params\": {\"customLabel\": \"IPs\", \"field\": \"source.ip\"}, \"schema\": \"metric\", \"type\": \"cardinality\", \"enabled\": true, \"id\": \"5\"}, {\"params\": {\"customLabel\": \"Actions\"}, \"schema\": \"metric\", \"type\": \"count\", \"enabled\": true, \"id\": \"1\"}]}"
+            },
+            "id": "52da1700-f05d-11e9-90ec-112a988266d5",
+            "migrationVersion": {
+                "visualization": "7.3.1"
+            },
+            "references": [
+                {
+                    "id": "filebeat-*",
+                    "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                    "type": "index-pattern"
+                }
+            ],
+            "type": "visualization",
+            "updated_at": "2019-10-18T09:05:04.252Z",
+            "version": "WzgwNjAsMV0="
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\", \"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"event.dataset :\\\"azure.activitylogs\\\" \"}}"
+                },
+                "title": "Caller IP [Filebeat Azure]",
+                "uiStateJSON": "{\"vis\": {\"params\": {\"sort\": {\"direction\": null, \"columnIndex\": null}}}}",
+                "version": 1,
+                "visState": "{\"params\": {\"dimensions\": {\"buckets\": [{\"accessor\": 0, \"aggType\": \"terms\", \"format\": {\"params\": {\"otherBucketLabel\": \"Other\", \"missingBucketLabel\": \"Missing\", \"id\": \"ip\"}, \"id\": \"terms\"}, \"params\": {}}, {\"accessor\": 1, \"aggType\": \"terms\", \"format\": {\"params\": {\"otherBucketLabel\": \"Other\", \"missingBucketLabel\": \"Missing\", \"id\": \"string\"}, \"id\": \"terms\"}, \"params\": {}}, {\"accessor\": 2, \"aggType\": \"terms\", \"format\": {\"params\": {\"otherBucketLabel\": \"Other\", \"missingBucketLabel\": \"Missing\", \"id\": \"string\"}, \"id\": \"terms\"}, \"params\": {}}], \"metrics\": [{\"accessor\": 3, \"aggType\": \"count\", \"format\": {\"id\": \"number\"}, \"params\": {}}]}, \"perPage\": 10, \"showMetricsAtAllLevels\": false, \"percentageCol\": \"\", \"sort\": {\"direction\": null, \"columnIndex\": null}, \"showPartialRows\": false, \"showTotal\": false, \"totalFunc\": \"sum\"}, \"type\": \"table\", \"title\": \"Caller IP [Filebeat Azure]\", \"aggs\": [{\"params\": {\"otherBucket\": false, \"orderBy\": \"5\", \"customLabel\": \"Caller IP\", \"missingBucket\": false, \"otherBucketLabel\": \"Other\", \"size\": 100, \"missingBucketLabel\": \"Missing\", \"field\": \"source.ip\", \"order\": \"desc\"}, \"schema\": \"bucket\", \"type\": \"terms\", \"enabled\": true, \"id\": \"2\"}, {\"params\": {\"otherBucket\": false, \"orderBy\": \"5\", \"customLabel\": \"Country\", \"missingBucket\": false, \"otherBucketLabel\": \"Other\", \"size\": 100, \"missingBucketLabel\": \"Missing\", \"field\": \"geo.country_name\", \"order\": \"desc\"}, \"schema\": \"bucket\", \"type\": \"terms\", \"enabled\": true, \"id\": \"3\"}, {\"params\": {\"otherBucket\": false, \"orderBy\": \"_key\", \"customLabel\": \"Email\", \"missingBucket\": false, \"otherBucketLabel\": \"Other\", \"size\": 5, \"missingBucketLabel\": \"Missing\", \"field\": \"azure.activitylogs.identity.claims_initiated_by_user.name\", \"order\": \"desc\"}, \"schema\": \"bucket\", \"type\": \"terms\", \"enabled\": true, \"id\": \"4\"}, {\"params\": {}, \"schema\": \"metric\", \"type\": \"count\", \"enabled\": true, \"id\": \"5\"}]}"
+            },
+            "id": "6ece76d0-f0cc-11e9-90ec-112a988266d5",
+            "migrationVersion": {
+                "visualization": "7.3.1"
+            },
+            "references": [
+                {
+                    "id": "filebeat-*",
+                    "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                    "type": "index-pattern"
+                }
+            ],
+            "type": "visualization",
+            "updated_at": "2019-10-18T09:09:36.555Z",
+            "version": "WzgwNjUsMV0="
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"\"}}"
+                },
+                "title": "Authorization Activity User [Filebeat Azure]",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"params\": {\"default_timefield\": \"@timestamp\", \"axis_scale\": \"normal\", \"isModelInvalid\": false, \"time_field\": \"\", \"default_index_pattern\": \"metricbeat-*\", \"index_pattern\": \"filebeat-*\", \"interval\": \"\", \"axis_formatter\": \"number\", \"axis_position\": \"left\", \"filter\": {\"language\": \"kuery\", \"query\": \"event.dataset :\\\"azure.activitylogs\\\" and azure.activitylogs.operation_name : *LISTKEYS* \"}, \"show_legend\": 0, \"show_grid\": 1, \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"type\": \"timeseries\", \"series\": [{\"point_size\": 1, \"chart_type\": \"line\", \"formatter\": \"number\", \"stacked\": \"none\", \"fill\": 0.5, \"metrics\": [{\"type\": \"count\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}], \"axis_position\": \"right\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"color\": \"rgba(164,221,0,1)\", \"filter\": {\"language\": \"kuery\", \"query\": \"event.outcome : \\\"Success\\\" \"}, \"terms_field\": \"event.outcome\", \"line_width\": 1, \"separate_axis\": 0, \"label\": \"Success\", \"split_mode\": \"filter\"}, {\"point_size\": 1, \"chart_type\": \"line\", \"formatter\": \"number\", \"stacked\": \"none\", \"fill\": 0.5, \"metrics\": [{\"type\": \"count\", \"id\": \"78e85471-f0cb-11e9-bf79-0db2fc8554f1\"}], \"axis_position\": \"right\", \"id\": \"78e85470-f0cb-11e9-bf79-0db2fc8554f1\", \"color\": \"rgba(244,78,59,1)\", \"filter\": {\"language\": \"kuery\", \"query\": \"event.outcome : \\\"Fail\\\" \"}, \"line_width\": 1, \"separate_axis\": 0, \"label\": \"Failure\", \"split_mode\": \"filter\"}]}, \"type\": \"metrics\", \"title\": \"Authorization Activity User [Filebeat Azure]\", \"aggs\": []}"
+            },
+            "id": "0dd135c0-f0cc-11e9-90ec-112a988266d5",
+            "migrationVersion": {
+                "visualization": "7.3.1"
+            },
+            "references": [],
+            "type": "visualization",
+            "updated_at": "2019-10-17T11:33:16.437Z",
+            "version": "WzQ4OTksMV0="
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\", \"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"\"}}"
+                },
+                "title": "Top Resource Groups [Filebeat Azure]",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"params\": {\"seriesParams\": [{\"drawLinesBetweenPoints\": true, \"mode\": \"normal\", \"valueAxis\": \"ValueAxis-1\", \"data\": {\"label\": \"Count\", \"id\": \"1\"}, \"showCircles\": true, \"show\": true, \"type\": \"histogram\"}], \"addTooltip\": true, \"grid\": {\"categoryLines\": false}, \"addLegend\": true, \"categoryAxes\": [{\"position\": \"left\", \"scale\": {\"type\": \"linear\"}, \"labels\": {\"rotate\": 0, \"filter\": false, \"truncate\": 200, \"show\": true}, \"style\": {}, \"type\": \"category\", \"show\": true, \"title\": {}, \"id\": \"CategoryAxis-1\"}], \"type\": \"histogram\", \"dimensions\": {\"y\": [{\"accessor\": 1, \"aggType\": \"count\", \"format\": {\"id\": \"number\"}, \"params\": {}}], \"x\": {\"accessor\": 0, \"aggType\": \"terms\", \"format\": {\"params\": {\"otherBucketLabel\": \"Other\", \"missingBucketLabel\": \"Missing\", \"id\": \"string\"}, \"id\": \"terms\"}, \"params\": {}}}, \"addTimeMarker\": false, \"labels\": {}, \"times\": [], \"valueAxes\": [{\"position\": \"bottom\", \"scale\": {\"type\": \"linear\", \"mode\": \"normal\"}, \"labels\": {\"rotate\": 75, \"filter\": true, \"truncate\": 100, \"show\": true}, \"style\": {}, \"name\": \"LeftAxis-1\", \"show\": false, \"title\": {\"text\": \"Count\"}, \"type\": \"value\", \"id\": \"ValueAxis-1\"}], \"legendPosition\": \"right\"}, \"type\": \"horizontal_bar\", \"title\": \"Top Resource Groups [Filebeat Azure]\", \"aggs\": [{\"params\": {}, \"schema\": \"metric\", \"type\": \"count\", \"enabled\": true, \"id\": \"1\"}, {\"params\": {\"otherBucket\": false, \"orderBy\": \"1\", \"customLabel\": \"Resource Groups\", \"missingBucket\": false, \"otherBucketLabel\": \"Other\", \"size\": 10, \"missingBucketLabel\": \"Missing\", \"field\": \"azure.resource.group\", \"order\": \"desc\"}, \"schema\": \"segment\", \"type\": \"terms\", \"enabled\": true, \"id\": \"2\"}]}"
+            },
+            "id": "71b62ca0-ec1a-11e9-90ec-112a988266d5",
+            "migrationVersion": {
+                "visualization": "7.3.1"
+            },
+            "references": [
+                {
+                    "id": "filebeat-*",
+                    "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                    "type": "index-pattern"
+                }
+            ],
+            "type": "visualization",
+            "updated_at": "2019-10-17T14:50:09.427Z",
+            "version": "WzYxMTUsMV0="
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\", \"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"event.dataset :\\\"azure.activitylogs\\\" \"}}"
+                },
+                "title": "Resource Creations [Filebeat Azure]",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"params\": {\"seriesParams\": [{\"drawLinesBetweenPoints\": true, \"valueAxis\": \"ValueAxis-1\", \"mode\": \"stacked\", \"lineWidth\": 2, \"data\": {\"label\": \"Count\", \"id\": \"1\"}, \"showCircles\": true, \"show\": true, \"type\": \"histogram\"}], \"addTooltip\": true, \"thresholdLine\": {\"value\": 10, \"color\": \"#E7664C\", \"show\": false, \"style\": \"full\", \"width\": 1}, \"grid\": {\"valueAxis\": \"\", \"categoryLines\": false}, \"addLegend\": true, \"categoryAxes\": [{\"position\": \"left\", \"scale\": {\"type\": \"linear\"}, \"labels\": {\"rotate\": 0, \"filter\": false, \"truncate\": 200, \"show\": true}, \"style\": {}, \"type\": \"category\", \"show\": true, \"title\": {}, \"id\": \"CategoryAxis-1\"}], \"type\": \"histogram\", \"dimensions\": {\"y\": [{\"accessor\": 2, \"aggType\": \"count\", \"label\": \"Count\", \"format\": {\"id\": \"number\"}, \"params\": {}}], \"series\": [{\"accessor\": 1, \"aggType\": \"terms\", \"label\": \"Creations\", \"format\": {\"params\": {\"otherBucketLabel\": \"Other\", \"missingBucketLabel\": \"Missing\", \"id\": \"string\"}, \"id\": \"terms\"}, \"params\": {}}], \"x\": {\"accessor\": 0, \"aggType\": \"terms\", \"label\": \"Resource type\", \"format\": {\"params\": {\"otherBucketLabel\": \"Other\", \"missingBucketLabel\": \"Missing\", \"id\": \"string\"}, \"id\": \"terms\"}, \"params\": {}}}, \"addTimeMarker\": false, \"labels\": {}, \"times\": [], \"valueAxes\": [{\"position\": \"bottom\", \"scale\": {\"type\": \"linear\", \"mode\": \"normal\"}, \"labels\": {\"rotate\": 75, \"filter\": true, \"truncate\": 100, \"show\": true}, \"style\": {}, \"name\": \"LeftAxis-1\", \"show\": false, \"title\": {\"text\": \"Count\"}, \"type\": \"value\", \"id\": \"ValueAxis-1\"}], \"legendPosition\": \"right\"}, \"type\": \"horizontal_bar\", \"title\": \"Resource Creations [Filebeat Azure]\", \"aggs\": [{\"schema\": \"metric\", \"params\": {}, \"type\": \"count\", \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"params\": {\"otherBucket\": false, \"orderBy\": \"1\", \"customLabel\": \"Resource type\", \"missingBucket\": false, \"otherBucketLabel\": \"Other\", \"order\": \"desc\", \"missingBucketLabel\": \"Missing\", \"size\": 15, \"field\": \"azure.resource.provider\"}, \"type\": \"terms\", \"enabled\": true, \"id\": \"2\"}, {\"schema\": \"group\", \"params\": {\"otherBucket\": false, \"orderBy\": \"1\", \"customLabel\": \"Creations\", \"missingBucket\": false, \"include\": \".*write\", \"otherBucketLabel\": \"Other\", \"order\": \"desc\", \"missingBucketLabel\": \"Missing\", \"size\": 15, \"field\": \"azure.activitylogs.identity.authorization.action\"}, \"type\": \"terms\", \"enabled\": true, \"id\": \"4\"}]}"
+            },
+            "id": "d91ce8d0-53e8-11ea-b1b7-7de801e1c297",
+            "migrationVersion": {
+                "visualization": "7.3.1"
+            },
+            "references": [
+                {
+                    "id": "filebeat-*",
+                    "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                    "type": "index-pattern"
+                }
+            ],
+            "type": "visualization",
+            "updated_at": "2020-02-20T13:57:45.235Z",
+            "version": "WzU4OSwxXQ=="
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\", \"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"event.dataset :\\\"azure.activitylogs\\\" \"}}"
+                },
+                "title": "Resource Deletions [Filebeat Azure]",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"params\": {\"seriesParams\": [{\"showCircles\": true, \"mode\": \"normal\", \"drawLinesBetweenPoints\": true, \"lineWidth\": 2, \"data\": {\"label\": \"Count\", \"id\": \"1\"}, \"type\": \"histogram\", \"show\": true, \"valueAxis\": \"ValueAxis-1\"}], \"addTooltip\": true, \"thresholdLine\": {\"value\": 10, \"color\": \"#E7664C\", \"show\": false, \"width\": 1, \"style\": \"full\"}, \"grid\": {\"categoryLines\": false}, \"addLegend\": true, \"valueAxes\": [{\"position\": \"bottom\", \"scale\": {\"type\": \"linear\", \"mode\": \"normal\"}, \"style\": {}, \"labels\": {\"rotate\": 75, \"filter\": true, \"show\": false, \"truncate\": 100}, \"name\": \"LeftAxis-1\", \"show\": true, \"title\": {\"text\": \"Count\"}, \"type\": \"value\", \"id\": \"ValueAxis-1\"}], \"type\": \"histogram\", \"dimensions\": {\"y\": [{\"accessor\": 2, \"params\": {}, \"label\": \"Count\", \"format\": {\"id\": \"number\"}, \"aggType\": \"count\"}], \"series\": [{\"accessor\": 1, \"params\": {}, \"label\": \"Deletions\", \"format\": {\"params\": {\"otherBucketLabel\": \"Other\", \"missingBucketLabel\": \"Missing\", \"id\": \"string\"}, \"id\": \"terms\"}, \"aggType\": \"terms\"}], \"x\": {\"accessor\": 0, \"params\": {}, \"label\": \"azure.resource.provider: Descending\", \"format\": {\"params\": {\"otherBucketLabel\": \"Other\", \"missingBucketLabel\": \"Missing\", \"id\": \"string\"}, \"id\": \"terms\"}, \"aggType\": \"terms\"}}, \"addTimeMarker\": false, \"labels\": {}, \"times\": [], \"categoryAxes\": [{\"position\": \"left\", \"scale\": {\"type\": \"linear\"}, \"style\": {}, \"labels\": {\"rotate\": 0, \"filter\": false, \"show\": true, \"truncate\": 200}, \"type\": \"category\", \"show\": true, \"title\": {}, \"id\": \"CategoryAxis-1\"}], \"legendPosition\": \"right\"}, \"type\": \"horizontal_bar\", \"title\": \"Resource Deletions [Filebeat Azure]\", \"aggs\": [{\"schema\": \"metric\", \"params\": {}, \"type\": \"count\", \"enabled\": true, \"id\": \"1\"}, {\"schema\": \"segment\", \"params\": {\"otherBucket\": false, \"orderBy\": \"1\", \"customLabel\": \"Resource type\", \"missingBucket\": false, \"otherBucketLabel\": \"Other\", \"order\": \"desc\", \"missingBucketLabel\": \"Missing\", \"size\": 15, \"field\": \"azure.resource.provider\"}, \"type\": \"terms\", \"enabled\": true, \"id\": \"2\"}, {\"schema\": \"group\", \"params\": {\"otherBucket\": false, \"orderBy\": \"1\", \"customLabel\": \"Deletions\", \"missingBucket\": false, \"include\": \".*delete\", \"otherBucketLabel\": \"Other\", \"order\": \"desc\", \"missingBucketLabel\": \"Missing\", \"size\": 15, \"field\": \"azure.activitylogs.identity.authorization.action\"}, \"type\": \"terms\", \"enabled\": true, \"id\": \"3\"}]}"
+            },
+            "id": "6db84660-53e9-11ea-b1b7-7de801e1c297",
+            "migrationVersion": {
+                "visualization": "7.3.1"
+            },
+            "references": [
+                {
+                    "id": "filebeat-*",
+                    "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                    "type": "index-pattern"
+                }
+            ],
+            "type": "visualization",
+            "updated_at": "2020-02-20T14:01:02.150Z",
+            "version": "WzU5MiwxXQ=="
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\", \"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"event.dataset :\\\"azure.activitylogs\\\" \"}}"
+                },
+                "title": "Resource Type Breakdown [Filebeat Azure]",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"params\": {\"dimensions\": {\"buckets\": [{\"accessor\": 0, \"aggType\": \"terms\", \"format\": {\"params\": {\"otherBucketLabel\": \"Other\", \"missingBucketLabel\": \"Missing\", \"id\": \"string\"}, \"id\": \"terms\"}, \"params\": {}}], \"metric\": {\"accessor\": 1, \"aggType\": \"count\", \"format\": {\"id\": \"number\"}, \"params\": {}}}, \"addTooltip\": true, \"labels\": {\"show\": false, \"truncate\": 100, \"values\": true, \"last_level\": true}, \"addLegend\": true, \"type\": \"pie\", \"legendPosition\": \"right\", \"isDonut\": false}, \"type\": \"pie\", \"title\": \"Resource Type Breakdown [Filebeat Azure]\", \"aggs\": [{\"params\": {}, \"schema\": \"metric\", \"type\": \"count\", \"enabled\": true, \"id\": \"1\"}, {\"params\": {\"otherBucket\": false, \"orderBy\": \"1\", \"missingBucket\": false, \"otherBucketLabel\": \"Other\", \"size\": 10, \"missingBucketLabel\": \"Missing\", \"field\": \"azure.resource.provider\", \"order\": \"desc\"}, \"schema\": \"segment\", \"type\": \"terms\", \"enabled\": true, \"id\": \"2\"}]}"
+            },
+            "id": "9ed46680-f0ce-11e9-90ec-112a988266d5",
+            "migrationVersion": {
+                "visualization": "7.3.1"
+            },
+            "references": [
+                {
+                    "id": "filebeat-*",
+                    "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                    "type": "index-pattern"
+                }
+            ],
+            "type": "visualization",
+            "updated_at": "2019-10-17T11:32:13.057Z",
+            "version": "WzQ4OTYsMV0="
+        }
+    ],
+    "version": "7.4.0"
+}

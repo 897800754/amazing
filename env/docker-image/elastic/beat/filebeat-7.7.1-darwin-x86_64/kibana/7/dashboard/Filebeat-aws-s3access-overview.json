@@ -1,0 +1,136 @@
+{
+    "objects": [
+        {
+            "attributes": {
+                "description": "Filebeat AWS S3 Server Access Log Overview Dashboard",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"\"}}"
+                },
+                "optionsJSON": "{\"hidePanelTitles\": false, \"useMargins\": true}",
+                "panelsJSON": "[{\"panelRefName\": \"panel_0\", \"title\": \"Top URLs\", \"version\": \"7.4.0\", \"embeddableConfig\": {\"title\": \"Top URLs\"}, \"gridData\": {\"i\": \"1\", \"y\": 0, \"h\": 15, \"x\": 0, \"w\": 24}, \"panelIndex\": \"1\"}, {\"panelRefName\": \"panel_1\", \"title\": \"Http Status over time\", \"version\": \"7.4.0\", \"embeddableConfig\": {\"title\": \"Http Status over time\"}, \"gridData\": {\"i\": \"2\", \"y\": 0, \"h\": 15, \"x\": 24, \"w\": 24}, \"panelIndex\": \"2\"}, {\"panelRefName\": \"panel_2\", \"title\": \"Error Logs\", \"version\": \"7.4.0\", \"embeddableConfig\": {\"title\": \"Error Logs\"}, \"gridData\": {\"i\": \"3\", \"y\": 15, \"h\": 15, \"x\": 0, \"w\": 48}, \"panelIndex\": \"3\"}]",
+                "timeRestore": false,
+                "title": "[Filebeat AWS] S3 Server Access Log Overview",
+                "version": 1
+            },
+            "id": "4746e000-bacd-11e9-9f70-1f7bda85a5eb",
+            "migrationVersion": {
+                "dashboard": "7.3.0"
+            },
+            "references": [
+                {
+                    "id": "99ffdb00-bacb-11e9-9f70-1f7bda85a5eb",
+                    "name": "panel_0",
+                    "type": "visualization"
+                },
+                {
+                    "id": "5c93cd10-bac3-11e9-9f70-1f7bda85a5eb",
+                    "name": "panel_1",
+                    "type": "visualization"
+                },
+                {
+                    "id": "5e5a3c90-bac0-11e9-9f70-1f7bda85a5eb",
+                    "name": "panel_2",
+                    "type": "search"
+                }
+            ],
+            "type": "dashboard",
+            "updated_at": "2019-09-11T15:17:53.090Z",
+            "version": "WzEyMDAsN10="
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\", \"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"\"}}"
+                },
+                "title": "Top URLs [Filebeat AWS]",
+                "uiStateJSON": "{\"vis\": {\"colors\": {\"404\": \"#EAB839\"}}}",
+                "version": 1,
+                "visState": "{\"params\": {\"dimensions\": {\"buckets\": [{\"accessor\": 2, \"aggType\": \"terms\", \"format\": {\"params\": {\"otherBucketLabel\": \"Other\", \"missingBucketLabel\": \"Missing\", \"id\": \"number\"}, \"id\": \"terms\"}, \"params\": {}}], \"metric\": {\"accessor\": 3, \"aggType\": \"count\", \"format\": {\"id\": \"number\"}, \"params\": {}}, \"splitColumn\": [{\"accessor\": 0, \"aggType\": \"terms\", \"format\": {\"params\": {\"otherBucketLabel\": \"Other\", \"missingBucketLabel\": \"Missing\", \"id\": \"string\"}, \"id\": \"terms\"}, \"params\": {}}]}, \"addTooltip\": true, \"labels\": {\"show\": false, \"truncate\": 100, \"values\": true, \"last_level\": true}, \"addLegend\": true, \"type\": \"pie\", \"legendPosition\": \"right\", \"isDonut\": false}, \"type\": \"pie\", \"title\": \"Top URLs [Filebeat AWS]\", \"aggs\": [{\"params\": {}, \"schema\": \"metric\", \"type\": \"count\", \"enabled\": true, \"id\": \"1\"}, {\"params\": {\"otherBucket\": false, \"orderBy\": \"1\", \"customLabel\": \"Request Uri\", \"missingBucket\": false, \"otherBucketLabel\": \"Other\", \"size\": 5, \"missingBucketLabel\": \"Missing\", \"row\": false, \"field\": \"aws.s3access.request_uri\", \"order\": \"desc\"}, \"schema\": \"split\", \"type\": \"terms\", \"enabled\": true, \"id\": \"2\"}, {\"params\": {\"otherBucket\": false, \"orderBy\": \"1\", \"customLabel\": \"HTTP Status\", \"missingBucket\": false, \"otherBucketLabel\": \"Other\", \"size\": 5, \"missingBucketLabel\": \"Missing\", \"field\": \"aws.s3access.http_status\", \"order\": \"desc\"}, \"schema\": \"segment\", \"type\": \"terms\", \"enabled\": true, \"id\": \"3\"}]}"
+            },
+            "id": "99ffdb00-bacb-11e9-9f70-1f7bda85a5eb",
+            "migrationVersion": {
+                "visualization": "7.3.1"
+            },
+            "references": [
+                {
+                    "id": "filebeat-*",
+                    "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                    "type": "index-pattern"
+                }
+            ],
+            "type": "visualization",
+            "updated_at": "2019-09-11T15:11:59.518Z",
+            "version": "Wzk0Myw3XQ=="
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"\"}}"
+                },
+                "title": "Http Status over time [Filebeat AWS]",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"params\": {\"default_timefield\": \"@timestamp\", \"axis_scale\": \"normal\", \"time_field\": \"@timestamp\", \"default_index_pattern\": \"metricbeat-*\", \"index_pattern\": \"filebeat-*\", \"interval\": \"auto\", \"axis_formatter\": \"number\", \"axis_position\": \"left\", \"filter\": {\"language\": \"lucene\", \"query\": \"event.module:aws AND fileset.name:s3access\"}, \"series\": [{\"point_size\": 1, \"chart_type\": \"bar\", \"formatter\": \"number\", \"stacked\": \"stacked\", \"fill\": 0.5, \"metrics\": [{\"type\": \"count\", \"id\": \"61ca57f2-469d-11e7-af02-69e470af7417\"}], \"terms_order_by\": \"61ca57f2-469d-11e7-af02-69e470af7417\", \"axis_position\": \"right\", \"id\": \"61ca57f1-469d-11e7-af02-69e470af7417\", \"seperate_axis\": 0, \"color\": \"#68BC00\", \"split_filters\": [{\"color\": \"#68BC00\", \"filter\": {\"language\": \"kuery\", \"query\": \"aws.s3access.http_status < 300 and aws.s3access.http_status >= 200\"}, \"label\": \"200s\", \"id\": \"5acdc750-a29d-11e7-a062-a1c3587f4874\"}, {\"color\": \"rgba(252,196,0,1)\", \"filter\": {\"language\": \"kuery\", \"query\": \"aws.s3access.http_status < 400 and aws.s3access.http_status >= 300\"}, \"label\": \"300s\", \"id\": \"6efd2ae0-a29d-11e7-a062-a1c3587f4874\"}, {\"color\": \"rgba(211,49,21,1)\", \"filter\": {\"language\": \"kuery\", \"query\": \"aws.s3access.http_status < 500 and aws.s3access.http_status >= 400\"}, \"label\": \"400s\", \"id\": \"76089a90-a29d-11e7-a062-a1c3587f4874\"}, {\"color\": \"rgba(171,20,158,1)\", \"filter\": {\"language\": \"kuery\", \"query\": \"aws.s3access.http_status < 600 and aws.s3access.http_status >= 500\"}, \"label\": \"500s\", \"id\": \"7c7929d0-a29d-11e7-a062-a1c3587f4874\"}], \"line_width\": 1, \"label\": \"Http Status\", \"split_mode\": \"filters\", \"terms_field\": \"http.response.status_code\"}], \"show_legend\": 1, \"show_grid\": 1, \"id\": \"61ca57f0-469d-11e7-af02-69e470af7417\", \"type\": \"timeseries\", \"legend_position\": \"bottom\"}, \"type\": \"metrics\", \"title\": \"Http Status over time [Filebeat AWS]\", \"aggs\": []}"
+            },
+            "id": "5c93cd10-bac3-11e9-9f70-1f7bda85a5eb",
+            "migrationVersion": {
+                "visualization": "7.3.1"
+            },
+            "references": [],
+            "type": "visualization",
+            "updated_at": "2019-09-11T15:11:59.518Z",
+            "version": "Wzk0NCw3XQ=="
+        },
+        {
+            "attributes": {
+                "columns": [
+                    "aws.s3access.http_status",
+                    "aws.s3access.error_code",
+                    "aws.s3access.operation",
+                    "aws.s3access.request_uri"
+                ],
+                "description": "",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"highlightAll\": true, \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\", \"filter\": [{\"query\": {\"match\": {\"aws.s3access.http_status\": {\"type\": \"phrase\", \"query\": \"200\"}}}, \"$state\": {\"store\": \"appState\"}, \"meta\": {\"params\": {\"query\": \"200\"}, \"key\": \"aws.s3access.http_status\", \"alias\": null, \"value\": \"200\", \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\", \"disabled\": false, \"type\": \"phrase\", \"negate\": true}}, {\"query\": {\"match\": {\"fileset.name\": {\"type\": \"phrase\", \"query\": \"s3access\"}}}, \"$state\": {\"store\": \"appState\"}, \"meta\": {\"params\": {\"query\": \"s3access\"}, \"key\": \"fileset.name\", \"alias\": null, \"value\": \"s3access\", \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.filter[1].meta.index\", \"disabled\": false, \"type\": \"phrase\", \"negate\": false}}], \"version\": true, \"query\": {\"language\": \"kuery\", \"query\": \"\"}}"
+                },
+                "sort": [
+                    [
+                        "@timestamp",
+                        "desc"
+                    ]
+                ],
+                "title": "Error Logs [Filebeat AWS]",
+                "version": 1
+            },
+            "id": "5e5a3c90-bac0-11e9-9f70-1f7bda85a5eb",
+            "migrationVersion": {
+                "search": "7.4.0"
+            },
+            "references": [
+                {
+                    "id": "filebeat-*",
+                    "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                    "type": "index-pattern"
+                },
+                {
+                    "id": "filebeat-*",
+                    "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+                    "type": "index-pattern"
+                },
+                {
+                    "id": "filebeat-*",
+                    "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[1].meta.index",
+                    "type": "index-pattern"
+                }
+            ],
+            "type": "search",
+            "updated_at": "2019-09-11T15:17:42.648Z",
+            "version": "WzExOTksN10="
+        }
+    ],
+    "version": "7.4.0"
+}

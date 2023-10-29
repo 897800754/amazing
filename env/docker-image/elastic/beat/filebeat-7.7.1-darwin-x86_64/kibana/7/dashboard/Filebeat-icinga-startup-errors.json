@@ -1,0 +1,62 @@
+{
+    "objects": [
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": []}"
+                },
+                "savedSearchId": "710043e0-2417-11e7-a83b-d5f4cebac9ff-ecs",
+                "title": "Startup Errors [Filebeat Icinga] ECS",
+                "uiStateJSON": "{\"vis\": {\"colors\": {\"Count\": \"#BF1B00\"}}}",
+                "version": 1,
+                "visState": "{\"params\": {\"addTooltip\": true, \"addTimeMarker\": false, \"mode\": \"stacked\", \"addLegend\": true, \"times\": [], \"defaultYExtents\": false, \"legendPosition\": \"right\", \"scale\": \"linear\", \"setYExtents\": false}, \"type\": \"histogram\", \"title\": \"Icinga Startup Errors ECS\", \"aggs\": [{\"params\": {}, \"schema\": \"metric\", \"type\": \"count\", \"enabled\": true, \"id\": \"1\"}, {\"params\": {\"extended_bounds\": {}, \"customInterval\": \"2h\", \"field\": \"@timestamp\", \"min_doc_count\": 1, \"interval\": \"auto\"}, \"schema\": \"segment\", \"type\": \"date_histogram\", \"enabled\": true, \"id\": \"2\"}], \"listeners\": {}}"
+            },
+            "id": "a59b5e00-2417-11e7-a83b-d5f4cebac9ff-ecs",
+            "type": "visualization",
+            "version": 2
+        },
+        {
+            "attributes": {
+                "columns": [
+                    "icinga.startup.facility",
+                    "log.level",
+                    "message"
+                ],
+                "description": "",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"highlightAll\": true, \"version\": true, \"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"log.level:critical\"}, \"index\": \"filebeat-*\"}"
+                },
+                "sort": [
+                    "@timestamp",
+                    "desc"
+                ],
+                "title": "Startup Errors [Filebeat Icinga] ECS",
+                "version": 1
+            },
+            "id": "710043e0-2417-11e7-a83b-d5f4cebac9ff-ecs",
+            "type": "search",
+            "version": 2
+        },
+        {
+            "attributes": {
+                "description": "Filebeat Icinga module dashboard for startup errors",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"highlightAll\": true, \"version\": true, \"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"\"}}"
+                },
+                "optionsJSON": "{\"darkTheme\": false}",
+                "panelsJSON": "[{\"size_x\": 12, \"col\": 1, \"size_y\": 2, \"type\": \"visualization\", \"id\": \"a59b5e00-2417-11e7-a83b-d5f4cebac9ff-ecs\", \"row\": 1, \"panelIndex\": 1}, {\"columns\": [\"icinga.startup.facility\", \"log.level\", \"message\"], \"size_x\": 12, \"sort\": [\"@timestamp\", \"desc\"], \"col\": 1, \"size_y\": 13, \"type\": \"search\", \"id\": \"710043e0-2417-11e7-a83b-d5f4cebac9ff-ecs\", \"row\": 3, \"panelIndex\": 2}]",
+                "timeRestore": false,
+                "title": "[Filebeat Icinga] Startup Errors ECS",
+                "uiStateJSON": "{}",
+                "version": 1
+            },
+            "id": "b9163ea0-2417-11e7-a83b-d5f4cebac9ff-ecs",
+            "type": "dashboard",
+            "version": 2
+        }
+    ],
+    "version": "6.0.0-beta1-SNAPSHOT"
+}

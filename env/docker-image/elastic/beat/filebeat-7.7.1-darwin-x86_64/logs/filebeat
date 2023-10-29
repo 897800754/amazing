@@ -1,0 +1,49 @@
+2023-04-18T18:04:38.966+0800	INFO	instance/beat.go:621	Home path: [/usr/local/docker-image/elastic/beat/filebeat-7.7.1-darwin-x86_64] Config path: [/usr/local/docker-image/elastic/beat/filebeat-7.7.1-darwin-x86_64] Data path: [/usr/local/docker-image/elastic/beat/filebeat-7.7.1-darwin-x86_64/data] Logs path: [/usr/local/docker-image/elastic/beat/filebeat-7.7.1-darwin-x86_64/logs]
+2023-04-18T18:04:38.967+0800	INFO	instance/beat.go:629	Beat ID: 262eb89f-2b9a-4fd2-ba7d-10c509ef7811
+2023-04-18T18:04:39.049+0800	INFO	[beat]	instance/beat.go:957	Beat info	{"system_info": {"beat": {"path": {"config": "/usr/local/docker-image/elastic/beat/filebeat-7.7.1-darwin-x86_64", "data": "/usr/local/docker-image/elastic/beat/filebeat-7.7.1-darwin-x86_64/data", "home": "/usr/local/docker-image/elastic/beat/filebeat-7.7.1-darwin-x86_64", "logs": "/usr/local/docker-image/elastic/beat/filebeat-7.7.1-darwin-x86_64/logs"}, "type": "filebeat", "uuid": "262eb89f-2b9a-4fd2-ba7d-10c509ef7811"}}}
+2023-04-18T18:04:39.049+0800	INFO	[beat]	instance/beat.go:966	Build info	{"system_info": {"build": {"commit": "932b273e8940575e15f10390882be205bad29e1f", "libbeat": "7.7.1", "time": "2020-05-28T15:24:10.000Z", "version": "7.7.1"}}}
+2023-04-18T18:04:39.049+0800	INFO	[beat]	instance/beat.go:969	Go runtime info	{"system_info": {"go": {"os":"darwin","arch":"amd64","max_procs":12,"version":"go1.13.9"}}}
+2023-04-18T18:04:39.049+0800	INFO	[beat]	instance/beat.go:973	Host info	{"system_info": {"host": {"architecture":"x86_64","boot_time":"2023-04-17T21:34:14.438091+08:00","name":"chengangdeMacBook-Pro.local","ip":["127.0.0.1/8","::1/128","fe80::1/64","fe80::aede:48ff:fe00:1122/64","172.16.9.153/21","fe80::ac87:e7ff:fea7:9f86/64","fe80::ac87:e7ff:fea7:9f86/64","fe80::52a3:62f9:e57c:d297/64","fe80::fdcf:90b:cd57:9c6e/64","fe80::ce81:b1c:bd2c:69e/64","fe80::7820:df08:6bc8:3a2d/64","fe80::3b54:2729:567d:e2d2/64","172.16.24.178/22","fe80::1cdb:ead4:5d18:1efb/64","169.254.169.144/16","fe80::1481:5ddd:175c:7447/64","169.254.92.230/16"],"kernel_version":"21.3.0","mac":["ac:de:48:00:11:22","36:7d:da:12:2d:70","14:7d:da:12:2d:70","ae:87:e7:a7:9f:86","ae:87:e7:a7:9f:86","82:af:6c:86:28:01","82:af:6c:86:28:00","82:af:6c:86:28:05","82:af:6c:86:28:04","82:af:6c:86:28:01","14:4f:d7:c4:1d:1e","46:f2:1b:e2:f6:5a","46:f2:1b:e2:f6:a5","3e:42:61:21:54:54"],"os":{"family":"darwin","platform":"darwin","name":"Mac OS X","version":"10.16","major":10,"minor":16,"patch":0,"build":"21D62"},"timezone":"CST","timezone_offset_sec":28800,"id":"9787F446-3DCC-53FD-9A7D-D7C5F1DA37CE"}}}
+2023-04-18T18:04:39.050+0800	INFO	[beat]	instance/beat.go:1002	Process info	{"system_info": {"process": {"cwd": "/usr/local/docker-image/elastic/beat/filebeat-7.7.1-darwin-x86_64", "exe": "./filebeat", "name": "filebeat", "pid": 5345, "ppid": 5047, "start_time": "2023-04-18T18:04:38.924+0800"}}}
+2023-04-18T18:04:39.050+0800	INFO	instance/beat.go:297	Setup Beat: filebeat; Version: 7.7.1
+2023-04-18T18:04:39.050+0800	INFO	eslegclient/connection.go:84	elasticsearch url: http://localhost:9200
+2023-04-18T18:04:39.050+0800	INFO	[publisher]	pipeline/module.go:110	Beat name: chengangdeMacBook-Pro.local
+2023-04-18T18:04:39.051+0800	INFO	[monitoring]	log/log.go:118	Starting metrics logging every 30s
+2023-04-18T18:04:39.051+0800	INFO	instance/beat.go:438	filebeat start running.
+2023-04-18T18:04:39.051+0800	INFO	registrar/registrar.go:145	Loading registrar data from /usr/local/docker-image/elastic/beat/filebeat-7.7.1-darwin-x86_64/data/registry/filebeat/data.json
+2023-04-18T18:04:39.051+0800	INFO	registrar/registrar.go:152	States Loaded from registrar: 1
+2023-04-18T18:04:39.051+0800	INFO	beater/crawler.go:73	Loading Inputs: 1
+2023-04-18T18:04:39.051+0800	INFO	log/input.go:152	Configured paths: [/Users/chengang/Desktop/ruigu/rbox/rbox-xiaoxiaole/*.log]
+2023-04-18T18:04:39.051+0800	INFO	input/input.go:114	Starting input of type: log; ID: 9708151590032566698 
+2023-04-18T18:04:39.054+0800	INFO	log/input.go:152	Configured paths: [/var/log/secure.log*]
+2023-04-18T18:04:39.054+0800	INFO	log/input.go:152	Configured paths: [/var/log/system.log*]
+2023-04-18T18:04:39.054+0800	INFO	beater/crawler.go:105	Loading and starting Inputs completed. Enabled inputs: 1
+2023-04-18T18:04:39.054+0800	INFO	cfgfile/reload.go:175	Config reloader started
+2023-04-18T18:04:39.056+0800	INFO	log/input.go:152	Configured paths: [/var/log/system.log*]
+2023-04-18T18:04:39.074+0800	INFO	log/input.go:152	Configured paths: [/var/log/secure.log*]
+2023-04-18T18:04:39.075+0800	INFO	eslegclient/connection.go:84	elasticsearch url: http://localhost:9200
+2023-04-18T18:04:39.082+0800	INFO	[esclientleg]	eslegclient/connection.go:263	Attempting to connect to Elasticsearch version 7.8.0
+2023-04-18T18:04:39.099+0800	INFO	input/input.go:114	Starting input of type: log; ID: 1901106538916249217 
+2023-04-18T18:04:39.113+0800	INFO	input/input.go:114	Starting input of type: log; ID: 16555999793111760116 
+2023-04-18T18:04:39.113+0800	INFO	cfgfile/reload.go:235	Loading of config files completed.
+2023-04-18T18:04:41.969+0800	INFO	[add_cloud_metadata]	add_cloud_metadata/add_cloud_metadata.go:89	add_cloud_metadata: hosting provider type not detected.
+2023-04-18T18:05:09.056+0800	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":32,"time":{"ms":32}},"total":{"ticks":88,"time":{"ms":88},"value":88},"user":{"ticks":56,"time":{"ms":56}}},"info":{"ephemeral_id":"aa9dc3b6-2acd-4f13-a855-d435367a425d","uptime":{"ms":30111}},"memstats":{"gc_next":11890272,"memory_alloc":6663960,"memory_total":16389248,"rss":35414016},"runtime":{"goroutines":51}},"filebeat":{"events":{"added":2,"done":2},"harvester":{"open_files":0,"running":0}},"libbeat":{"config":{"module":{"running":0},"reloads":1,"scans":1},"output":{"type":"elasticsearch"},"pipeline":{"clients":5,"events":{"active":0,"filtered":2,"total":2}}},"registrar":{"states":{"current":1,"update":2},"writes":{"success":2,"total":2}},"system":{"cpu":{"cores":12},"load":{"1":2.4443,"15":3.6567,"5":3.4731,"norm":{"1":0.2037,"15":0.3047,"5":0.2894}}}}}}
+2023-04-18T18:05:39.054+0800	INFO	[monitoring]	log/log.go:145	Non-zero metrics in the last 30s	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":38,"time":{"ms":6}},"total":{"ticks":98,"time":{"ms":10},"value":98},"user":{"ticks":60,"time":{"ms":4}}},"info":{"ephemeral_id":"aa9dc3b6-2acd-4f13-a855-d435367a425d","uptime":{"ms":60109}},"memstats":{"gc_next":11890272,"memory_alloc":8617840,"memory_total":18343128,"rss":143360},"runtime":{"goroutines":51}},"filebeat":{"harvester":{"open_files":0,"running":0}},"libbeat":{"config":{"module":{"running":0}},"pipeline":{"clients":5,"events":{"active":0}}},"registrar":{"states":{"current":1}},"system":{"load":{"1":1.9312,"15":3.5688,"5":3.2505,"norm":{"1":0.1609,"15":0.2974,"5":0.2709}}}}}}
+2023-04-18T18:05:42.834+0800	INFO	beater/filebeat.go:449	Stopping filebeat
+2023-04-18T18:05:42.834+0800	INFO	beater/crawler.go:138	Stopping Crawler
+2023-04-18T18:05:42.834+0800	INFO	beater/crawler.go:148	Stopping 1 inputs
+2023-04-18T18:05:42.834+0800	INFO	cfgfile/reload.go:238	Dynamic config reloader stopped
+2023-04-18T18:05:42.834+0800	INFO	input/input.go:149	input ticker stopped
+2023-04-18T18:05:42.834+0800	INFO	input/input.go:167	Stopping Input: 9708151590032566698
+2023-04-18T18:05:42.834+0800	INFO	[reload]	cfgfile/list.go:118	Stopping 1 runners ...
+2023-04-18T18:05:42.834+0800	INFO	input/input.go:149	input ticker stopped
+2023-04-18T18:05:42.834+0800	INFO	input/input.go:167	Stopping Input: 1901106538916249217
+2023-04-18T18:05:42.834+0800	INFO	input/input.go:149	input ticker stopped
+2023-04-18T18:05:42.834+0800	INFO	input/input.go:167	Stopping Input: 16555999793111760116
+2023-04-18T18:05:42.834+0800	INFO	beater/crawler.go:164	Crawler stopped
+2023-04-18T18:05:42.834+0800	INFO	registrar/registrar.go:367	Stopping Registrar
+2023-04-18T18:05:42.834+0800	INFO	registrar/registrar.go:293	Ending Registrar
+2023-04-18T18:05:42.877+0800	INFO	[monitoring]	log/log.go:153	Total non-zero metrics	{"monitoring": {"metrics": {"beat":{"cpu":{"system":{"ticks":41,"time":{"ms":41}},"total":{"ticks":103,"time":{"ms":103},"value":103},"user":{"ticks":62,"time":{"ms":62}}},"info":{"ephemeral_id":"aa9dc3b6-2acd-4f13-a855-d435367a425d","uptime":{"ms":63933}},"memstats":{"gc_next":11890272,"memory_alloc":9207960,"memory_total":18933248,"rss":35659776},"runtime":{"goroutines":19}},"filebeat":{"events":{"added":2,"done":2},"harvester":{"open_files":0,"running":0}},"libbeat":{"config":{"module":{"running":0},"reloads":1,"scans":1},"output":{"type":"elasticsearch"},"pipeline":{"clients":0,"events":{"active":0,"filtered":2,"total":2}}},"registrar":{"states":{"current":1,"update":2},"writes":{"success":3,"total":3}},"system":{"cpu":{"cores":12},"load":{"1":2.0967,"15":3.5713,"5":3.2627,"norm":{"1":0.1747,"15":0.2976,"5":0.2719}}}}}}
+2023-04-18T18:05:42.878+0800	INFO	[monitoring]	log/log.go:154	Uptime: 1m3.934319s
+2023-04-18T18:05:42.878+0800	INFO	[monitoring]	log/log.go:131	Stopping metrics logging.
+2023-04-18T18:05:42.878+0800	INFO	instance/beat.go:444	filebeat stopped.

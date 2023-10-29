@@ -1,0 +1,27 @@
+global: #全局配置
+  resolve_timeout: 1m # 告警恢复超时时间，当接收的告警没有EndsAt字段时，经过该时间就将该告警标志为已解决，prometheus上用不上，告警都会带EndsAt字段 每1分钟检测一次是否恢复
+
+route: # 告警路由配置，定义如何处理和发送告警
+  receiver: wechat
+  group_by: ['alertname']  # 设置分组标签，告警时出现的labels都可用于分组，如果需要对所有不同label都分组，可以使用’…’
+  group_wait: 30s  # 告警发送等待时间，时间拉长便于告警聚合  30s
+  group_interval: 10s   # 前后两组告警发送间隔时间
+  repeat_interval: 60s  # 重复告警发送间隔时间
+
+receivers: # 告警接收者配置
+  - name:  wechat  # 告警接收名称,与route中的receiver一一对应，这里我们配置的是企业微信
+    wechat_configs:
+    - corp_id: 'ww84dd28f1c464af18'
+      to_user: 'XingQuShiRan'
+      agent_id: '1000004'
+      api_secret: 'FNA5cIXKj5yEvgPiSTwDXFlDzjCF_b4QouRW7mDMcgg'
+      send_resolved: true
+
+#inhibit_rules: # 告警抑制规则
+#  - source_match: # 当新的告警匹配到target_match规则，而已发送告警满足source_match规则，并且新告警与已发送告警中equal定义的标签完全相同，则抑制这个新的告警。
+#      severity: 'major'
+#    target_match:
+#      severity: 'warning'
+#    equal: ['alertname', 'instance']
+templates:
+  - '/etc/alertmanager/*.tmpl'

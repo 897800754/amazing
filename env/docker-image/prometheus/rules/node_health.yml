@@ -1,0 +1,26 @@
+groups:
+  - name: node_health # rule名称
+    rules:
+      - alert: HighMemoryUsage #告警名称
+        expr: node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes < 0.9 #触发告警条件,通过promQL
+        for: 1m  #定义告警从产生到发送的等待时间
+        labels:
+          severity: warning #定义标签
+        annotations:  # 标签说明内容
+          summary: High memory usage
+
+      - alert: HighDiskUsage
+        expr: node_filesystem_free_bytes{mountpoint='/'} / node_filesystem_size_bytes{mountpoint='/'} < 0.9
+        for: 1m
+        labels:
+          severity: major
+        annotations:
+          summary: High Disk usage
+
+      - alert: HighDiskUsage
+        expr: node_filesystem_free_bytes{mountpoint='/'} / node_filesystem_size_bytes{mountpoint='/'} < 0.9
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: High Disk usage

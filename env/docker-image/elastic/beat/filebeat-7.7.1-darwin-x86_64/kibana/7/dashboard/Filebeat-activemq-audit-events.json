@@ -1,0 +1,141 @@
+{
+    "objects": [
+        {
+            "attributes": {
+                "description": "This dashboard shows audit logs collected by the ActiveMQ filebeat module.",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"filter\": [], \"query\": {\"language\": \"kuery\", \"query\": \"\"}}"
+                },
+                "optionsJSON": "{\"hidePanelTitles\": false, \"useMargins\": true}",
+                "panelsJSON": "[{\"panelRefName\": \"panel_0\", \"version\": \"7.4.0\", \"embeddableConfig\": {}, \"gridData\": {\"i\": \"11105044-eb78-45ab-9206-571e86f5f10d\", \"y\": 0, \"h\": 15, \"x\": 0, \"w\": 24}, \"panelIndex\": \"11105044-eb78-45ab-9206-571e86f5f10d\"}, {\"panelRefName\": \"panel_1\", \"version\": \"7.4.0\", \"embeddableConfig\": {}, \"gridData\": {\"i\": \"8f349d14-40d9-4a10-b7d5-0f57c2a69f69\", \"y\": 0, \"h\": 15, \"x\": 24, \"w\": 24}, \"panelIndex\": \"8f349d14-40d9-4a10-b7d5-0f57c2a69f69\"}, {\"panelRefName\": \"panel_2\", \"version\": \"7.4.0\", \"embeddableConfig\": {}, \"gridData\": {\"i\": \"f2a1e6f8-cd1a-4fbd-a0b1-da4ee9db7c54\", \"y\": 15, \"h\": 23, \"x\": 0, \"w\": 48}, \"panelIndex\": \"f2a1e6f8-cd1a-4fbd-a0b1-da4ee9db7c54\"}]",
+                "timeRestore": false,
+                "title": "[Filebeat ActiveMQ] Audit Events",
+                "version": 1
+            },
+            "id": "ffe86390-145f-11ea-8fd8-030a13064883",
+            "migrationVersion": {
+                "dashboard": "7.3.0"
+            },
+            "references": [
+                {
+                    "id": "38011a70-145a-11ea-8fd8-030a13064883",
+                    "name": "panel_0",
+                    "type": "visualization"
+                },
+                {
+                    "id": "38874920-1454-11ea-8fd8-030a13064883",
+                    "name": "panel_1",
+                    "type": "visualization"
+                },
+                {
+                    "id": "896ef3a0-145f-11ea-8fd8-030a13064883",
+                    "name": "panel_2",
+                    "type": "search"
+                }
+            ],
+            "type": "dashboard",
+            "updated_at": "2019-12-02T14:53:25.775Z",
+            "version": "WzI0MCw2XQ=="
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\", \"filter\": [{\"query\": {\"match\": {\"event.dataset\": {\"type\": \"phrase\", \"query\": \"activemq.audit\"}}}, \"$state\": {\"store\": \"appState\"}, \"meta\": {\"params\": {\"query\": \"activemq.audit\"}, \"key\": \"event.dataset\", \"alias\": null, \"value\": \"activemq.audit\", \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\", \"disabled\": false, \"type\": \"phrase\", \"negate\": false}}], \"query\": {\"language\": \"kuery\", \"query\": \"\"}}"
+                },
+                "title": "Audit Event Results [Filebeat ActiveMQ]",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"params\": {\"seriesParams\": [{\"drawLinesBetweenPoints\": true, \"mode\": \"normal\", \"valueAxis\": \"ValueAxis-1\", \"data\": {\"label\": \"Count\", \"id\": \"1\"}, \"showCircles\": true, \"show\": \"true\", \"type\": \"histogram\"}], \"addTooltip\": true, \"radiusRatio\": 50, \"thresholdLine\": {\"value\": 10, \"color\": \"#34130C\", \"show\": false, \"style\": \"full\", \"width\": 1}, \"grid\": {\"categoryLines\": false}, \"addLegend\": true, \"categoryAxes\": [{\"position\": \"bottom\", \"scale\": {\"type\": \"linear\"}, \"labels\": {\"filter\": true, \"truncate\": 100, \"show\": true}, \"style\": {}, \"type\": \"category\", \"show\": true, \"title\": {}, \"id\": \"CategoryAxis-1\"}], \"type\": \"histogram\", \"dimensions\": {\"y\": [{\"accessor\": 2, \"aggType\": \"count\", \"format\": {\"id\": \"number\"}, \"params\": {}}], \"series\": [{\"accessor\": 1, \"aggType\": \"terms\", \"format\": {\"params\": {\"otherBucketLabel\": \"Other\", \"missingBucketLabel\": \"Missing\", \"id\": \"string\"}, \"id\": \"terms\"}, \"params\": {}}], \"x\": {\"accessor\": 0, \"aggType\": \"date_histogram\", \"format\": {\"params\": {\"pattern\": \"HH:mm\"}, \"id\": \"date\"}, \"params\": {\"interval\": \"PT30M\", \"format\": \"HH:mm\", \"date\": true, \"bounds\": {\"min\": \"2019-11-30T16:41:18.507Z\", \"max\": \"2019-12-01T16:41:18.507Z\"}}}}, \"addTimeMarker\": false, \"labels\": {\"show\": false}, \"times\": [], \"valueAxes\": [{\"position\": \"left\", \"scale\": {\"type\": \"linear\", \"mode\": \"normal\"}, \"labels\": {\"rotate\": 0, \"filter\": false, \"truncate\": 100, \"show\": true}, \"style\": {}, \"name\": \"LeftAxis-1\", \"show\": true, \"title\": {\"text\": \"Count\"}, \"type\": \"value\", \"id\": \"ValueAxis-1\"}], \"legendPosition\": \"right\"}, \"type\": \"histogram\", \"title\": \"Audit Event Results [Filebeat ActiveMQ]\", \"aggs\": [{\"params\": {}, \"schema\": \"metric\", \"type\": \"count\", \"enabled\": true, \"id\": \"1\"}, {\"params\": {\"timeRange\": {\"to\": \"now\", \"from\": \"now-1d\"}, \"useNormalizedEsInterval\": true, \"drop_partials\": false, \"extended_bounds\": {}, \"field\": \"@timestamp\", \"min_doc_count\": 1, \"interval\": \"auto\"}, \"schema\": \"segment\", \"type\": \"date_histogram\", \"enabled\": true, \"id\": \"2\"}, {\"params\": {\"filters\": [{\"input\": {\"language\": \"kuery\", \"query\": \"event.dataset : \\\"activemq.audit\\\"\"}, \"label\": \"\"}], \"row\": false}, \"schema\": \"split\", \"type\": \"filters\", \"enabled\": true, \"id\": \"3\"}, {\"params\": {\"otherBucket\": false, \"orderBy\": \"1\", \"missingBucket\": false, \"otherBucketLabel\": \"Other\", \"size\": 15, \"missingBucketLabel\": \"Missing\", \"field\": \"log.level\", \"order\": \"desc\"}, \"schema\": \"group\", \"type\": \"terms\", \"enabled\": true, \"id\": \"4\"}]}"
+            },
+            "id": "38011a70-145a-11ea-8fd8-030a13064883",
+            "migrationVersion": {
+                "visualization": "7.3.1"
+            },
+            "references": [
+                {
+                    "id": "filebeat-*",
+                    "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                    "type": "index-pattern"
+                },
+                {
+                    "id": "filebeat-*",
+                    "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+                    "type": "index-pattern"
+                }
+            ],
+            "type": "visualization",
+            "updated_at": "2019-12-01T17:53:57.087Z",
+            "version": "WzIyMiw0XQ=="
+        },
+        {
+            "attributes": {
+                "description": "",
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\", \"filter\": [{\"query\": {\"match\": {\"event.dataset\": {\"type\": \"phrase\", \"query\": \"activemq.audit\"}}}, \"$state\": {\"store\": \"appState\"}, \"meta\": {\"params\": {\"query\": \"activemq.audit\"}, \"key\": \"event.dataset\", \"alias\": null, \"value\": \"activemq.audit\", \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\", \"disabled\": false, \"type\": \"phrase\", \"negate\": false}}], \"query\": {\"language\": \"kuery\", \"query\": \"\"}}"
+                },
+                "title": "Audit Account Tag Cloud [Filebeat ActiveMQ]",
+                "uiStateJSON": "{}",
+                "version": 1,
+                "visState": "{\"params\": {\"showLabel\": true, \"scale\": \"linear\", \"metric\": {\"accessor\": 1, \"type\": \"vis_dimension\", \"format\": {\"params\": {}, \"id\": \"string\"}}, \"bucket\": {\"accessor\": 0, \"type\": \"vis_dimension\", \"format\": {\"params\": {\"otherBucketLabel\": \"Other\", \"missingBucketLabel\": \"Missing\", \"id\": \"string\"}, \"id\": \"terms\"}}, \"orientation\": \"single\", \"minFontSize\": 18, \"maxFontSize\": 72}, \"type\": \"tagcloud\", \"title\": \"Audit Account Tag Cloud [Filebeat ActiveMQ]\", \"aggs\": [{\"params\": {}, \"schema\": \"metric\", \"type\": \"count\", \"enabled\": true, \"id\": \"1\"}, {\"params\": {\"otherBucket\": false, \"orderBy\": \"1\", \"missingBucket\": false, \"otherBucketLabel\": \"Other\", \"size\": 15, \"missingBucketLabel\": \"Missing\", \"field\": \"activemq.user\", \"order\": \"desc\"}, \"schema\": \"segment\", \"type\": \"terms\", \"enabled\": true, \"id\": \"2\"}]}"
+            },
+            "id": "38874920-1454-11ea-8fd8-030a13064883",
+            "migrationVersion": {
+                "visualization": "7.3.1"
+            },
+            "references": [
+                {
+                    "id": "filebeat-*",
+                    "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                    "type": "index-pattern"
+                },
+                {
+                    "id": "filebeat-*",
+                    "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+                    "type": "index-pattern"
+                }
+            ],
+            "type": "visualization",
+            "updated_at": "2019-12-02T14:50:22.535Z",
+            "version": "WzIzOSw2XQ=="
+        },
+        {
+            "attributes": {
+                "columns": [
+                    "log.level",
+                    "activemq.user",
+                    "message"
+                ],
+                "description": "",
+                "hits": 0,
+                "kibanaSavedObjectMeta": {
+                    "searchSourceJSON": "{\"highlightAll\": true, \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\", \"filter\": [], \"version\": true, \"query\": {\"language\": \"kuery\", \"query\": \"event.dataset :\\\"activemq.audit\\\"\"}}"
+                },
+                "sort": [
+                    [
+                        "@timestamp",
+                        "desc"
+                    ]
+                ],
+                "title": "Audit Events [Filebeat ActiveMQ]",
+                "version": 1
+            },
+            "id": "896ef3a0-145f-11ea-8fd8-030a13064883",
+            "migrationVersion": {
+                "search": "7.4.0"
+            },
+            "references": [
+                {
+                    "id": "filebeat-*",
+                    "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+                    "type": "index-pattern"
+                }
+            ],
+            "type": "search",
+            "updated_at": "2019-12-02T14:46:31.288Z",
+            "version": "WzIzNiw2XQ=="
+        }
+    ],
+    "version": "7.4.0"
+}

@@ -1,0 +1,134 @@
+version: "2.2"
+networks:
+  networkprom:
+    driver: bridge
+
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    restart: always
+    ports:
+      - 9090:9090
+    volumes:
+      - /Users/chengang/Desktop/个人项目/docker-image/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+#      - /Users/chengang/Desktop/个人项目/docker-image/prometheus/rules/node_health.yml:/etc/rules/node_health.yml
+      - /Users/chengang/Desktop/个人项目/docker-image/prometheus/rules:/etc/rules
+    container_name: prometheus
+    networks:
+      - networkprom
+  grafana:
+    image: grafana/grafana:latest
+    restart: always
+    ports:
+      - 3000:3000
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - /etc/localtime:/etc/localtime:ro \
+      - /Users/chengang/Desktop/个人项目/docker-image/prometheus/grafana/data:/var/lib/grafana \
+      - /Users/chengang/Desktop/个人项目/docker-image/prometheus/grafana/plugins/:/var/lib/grafana/plugins \
+    container_name: grafana
+    depends_on:
+      - prometheus
+    networks:
+      - networkprom
+  node-exporter:
+    image: prom/node-exporter:latest
+    restart: always
+    ports:
+      - 9100:9100
+    volumes:
+      - /proc:/host/proc:ro
+      - /sys:/host/sys:ro
+      - /:/rootfs:ro
+    container_name: node-exporter
+    networks:
+      - networkprom
+  alertmanager:
+    image: prom/alertmanager:latest
+    restart: always
+    ports:
+      - 9093:9093
+    volumes:
+      - /Users/chengang/Desktop/个人项目/docker-image/prometheus/alertManager:/etc/alertmanager
+    container_name: alertmanager
+    depends_on:
+      - prometheus
+    networks:
+      - networkprom
+  mysqld-exporter:
+    image: prom/mysqld-exporter:v0.10.0
+    restart: always
+    #    volumes:
+    #      - /Users/chengang/Desktop/个人项目/docker-image/prometheus/mysqld_export/.my.cnf:/home/.my1.cnf
+    ports:
+      - 9104:9104
+    networks:
+      - networkprom
+    container_name: mysqld-exporter
+    environment:
+      - DATA_SOURCE_NAME=root:root@(host.docker.internal:3306)/
+  pomeredis:
+    image: redis:latest
+    restart: always
+    container_name: pomeredis
+    ports:
+      - 6379:6379
+    networks:
+      - networkprom
+  redis-exporter:
+    image: oliver006/redis_exporter
+    restart: always
+    ports:
+      - 9121:9121
+    networks:
+      - networkprom
+    container_name: redis-exporter
+    command:
+      --redis.addr=redis://pomeredis:6379
+    depends_on:
+      - pomeredis
+  promerabbit:
+    image: rabbitmq:3.9-management
+    restart: always
+    container_name: promerabbit
+    ports:
+      - 15672:15672
+      - 5672:5672
+      - 15692:15692 # metrics
+    networks:
+      - networkprom
+  rabbit-export:
+    image: kbudde/rabbitmq-exporter:1.0.0-RC19
+    container_name: rabbit-export
+    volumes:
+      - /Users/chengang/Desktop/个人项目/docker-image/prometheus/rabbitmq/rabbitmq.conf:/home/conf/rabbitmq.conf
+    ports:
+      - 9419:9419
+    networks:
+      - networkprom
+    depends_on:
+      - promerabbit
+    command:
+      -config-file=/home/conf/rabbitmq.conf
+  push-gateway:
+    image: prom/pushgateway
+    container_name: push-gateway
+    ports:
+      - 9091:9091
+    networks:
+      - networkprom
+    depends_on:
+      - prometheus
+    restart: always
+#  prometheusManager:
+#    image: feiyu563/prometheus-alert:latest
+#    container_name: prometheusManager
+#    restart: always
+#    ports:
+#      - 8080:8080
+#    networks:
+#      - networkprom
+#    volumes:
+#      - /Users/chengang/Desktop/个人项目/docker-image/prometheus/prometheusManager/conf:/app/conf
+
