@@ -20,7 +20,7 @@ public class KafkaUtils {
 
     static String serverList = "localhost:9092";
 
-    static String topic = "";
+    static String topic = "flink-data";
 
     public static void writeToKafka() throws ExecutionException, InterruptedException {
 
@@ -30,6 +30,7 @@ public class KafkaUtils {
         props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer"); //value 序列化
 
         KafkaProducer producer = new KafkaProducer<String, String>(props);
+
 
         Map<String, Object> message = new HashMap<>();
 
