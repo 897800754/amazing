@@ -16,6 +16,7 @@
     <modules>
         <module>flink-hello</module>
         <module>flink-kafka-demo</module>
+        <module>flink-hello-datastream-api</module>
     </modules>
 
     <dependencies>
