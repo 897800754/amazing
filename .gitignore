@@ -74,3 +74,10 @@ spring/src/main/resources/templates/
 /spring-kafka/mvnw
 /spring-kafka/mvnw.cmd
 /spring-kafka/.mvn/
+/env/docker-image/kafka/kafka/data/kafka-logs-kafka/
+/env/docker-image/redis/cluster/redis1/
+/env/docker-image/redis/cluster/redis1-slave/
+/env/docker-image/redis/cluster/redis2/
+/env/docker-image/redis/cluster/redis2-slave/
+/env/docker-image/redis/cluster/redis3/
+/env/docker-image/redis/cluster/redis3-slave/

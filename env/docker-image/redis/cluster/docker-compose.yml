@@ -1,0 +1,126 @@
+##https://blog.csdn.net/lihongbao80/article/details/126176403
+version: '3.2'
+services:
+  redis-node-master-1:
+    image: redis:7.0
+    container_name: cluster-redis-1
+    ports:
+##cluster-announce-ip 172.20.96.1 #指定集群访问ip
+##cluster-announce-port 6381 #指定集群每个容器对外端口
+##cluster-announce-bus-port 16381 #指定集群每个容器对外端口
+      - 6381:6379
+      - 16381:16379
+    command:
+      - "redis-server"
+      - "/etc/redis/redis.conf"
+      - "--protected-mode"
+      - "no"
+      - "--cluster-announce-ip 172.20.96.1"
+      - "--cluster-announce-port"
+      - "6381"
+      - "--cluster-announce-bus-port"
+      - "16381"
+    volumes:
+      - ./redis.conf:/etc/redis/redis.conf
+      - ./redis1:/data
+      - /etc/localtime:/etc/localtime
+  redis-node-master-2:
+    image: redis:7.0
+    container_name: cluster-redis-2
+    ports:
+      - 6382:6379
+      - 16382:16379
+    command:
+      - "redis-server"
+      - "/etc/redis/redis.conf"
+      - "--protected-mode"
+      - "no"
+      - "--cluster-announce-ip 172.20.96.1"
+      - "--cluster-announce-port"
+      - "6382"
+      - "--cluster-announce-bus-port"
+      - "16382"
+    volumes:
+      - ./redis.conf:/etc/redis/redis.conf
+      - ./redis2:/data
+      - /etc/localtime:/etc/localtime
+  redis-node-master-3:
+    image: redis:7.0
+    container_name: cluster-redis-3
+    ports:
+      - 6383:6379
+      - 16383:16379
+    command:
+      - "redis-server"
+      - "/etc/redis/redis.conf"
+      - "--protected-mode"
+      - "no"
+      - "--cluster-announce-ip 172.20.96.1"
+      - "--cluster-announce-port"
+      - "6383"
+      - "--cluster-announce-bus-port"
+      - "16383"
+    volumes:
+      - ./redis.conf:/etc/redis/redis.conf
+      - ./redis3:/data
+      - /etc/localtime:/etc/localtime
+  redis-node-slave-1:
+    image: redis:7.0
+    container_name: cluster-redis-1-slave
+    ports:
+      - 6384:6379
+      - 16384:16379
+    command:
+      - "redis-server"
+      - "/etc/redis/redis.conf"
+      - "--protected-mode"
+      - "no"
+      - "--cluster-announce-ip 172.20.96.1"
+      - "--cluster-announce-port"
+      - "6384"
+      - "--cluster-announce-bus-port"
+      - "16384"
+    volumes:
+      - ./redis.conf:/etc/redis/redis.conf
+      - ./redis1-slave:/data
+      - /etc/localtime:/etc/localtime
+  redis-node-slave-2:
+    image: redis:7.0
+    container_name: cluster-redis-2-slave
+    ports:
+      - 6385:6379
+      - 16385:16379
+    command:
+      - "redis-server"
+      - "/etc/redis/redis.conf"
+      - "--protected-mode"
+      - "no"
+      - "--cluster-announce-ip 172.20.96.1"
+      - "--cluster-announce-port"
+      - "6385"
+      - "--cluster-announce-bus-port"
+      - "16385"
+    volumes:
+      - ./redis.conf:/etc/redis/redis.conf
+      - ./redis2-slave:/data
+      - /etc/localtime:/etc/localtime
+  redis-node-slave-3:
+    image: redis:7.0
+    container_name: cluster-redis-3-slave
+    ports:
+      - 6386:6379
+      - 16386:16379
+    command:
+      - "redis-server"
+      - "/etc/redis/redis.conf"
+      - "--protected-mode"
+      - "no"
+      - "--cluster-announce-ip 172.20.96.1"
+      - "--cluster-announce-port"
+      - "6386"
+      - "--cluster-announce-bus-port"
+      - "16386"
+    volumes:
+      - ./redis.conf:/etc/redis/redis.conf
+      - ./redis3-slave:/data
+      - /etc/localtime:/etc/localtime
