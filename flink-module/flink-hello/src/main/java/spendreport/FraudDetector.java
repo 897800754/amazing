@@ -22,6 +22,7 @@ import org.apache.flink.api.common.state.ValueState;
 import org.apache.flink.api.common.state.ValueStateDescriptor;
 import org.apache.flink.api.common.typeinfo.Types;
 import org.apache.flink.configuration.Configuration;
+import org.apache.flink.streaming.api.TimeDomain;
 import org.apache.flink.streaming.api.functions.KeyedProcessFunction;
 import org.apache.flink.util.Collector;
 import org.apache.flink.walkthrough.common.entity.Alert;
@@ -45,6 +46,12 @@ public class FraudDetector extends KeyedProcessFunction<Long, Transaction, Alert
 
     private transient ValueState<Long> timerState;
 
+    /**
+     * Called once during initialization.
+     * 初始化时被调用一次
+     *
+     * @param parameters The configuration containing the parameters attached to the contract.
+     */
     @Override
     public void open(Configuration parameters) {
         ValueStateDescriptor<Boolean> flagDescriptor = new ValueStateDescriptor<>(
@@ -58,6 +65,14 @@ public class FraudDetector extends KeyedProcessFunction<Long, Transaction, Alert
         timerState = getRuntimeContext().getState(timerDescriptor);
     }
 
+    /**
+     * @param transaction The input value.
+     * @param context     A {@link Context} that allows querying the timestamp of the element and getting a
+     *                    {@link TimerService} for registering timers and querying the time. The context is only
+     *                    valid during the invocation of this method, do not store it.
+     * @param collector   The collector for returning result values.
+     * @throws Exception
+     */
     @Override
     public void processElement(
             Transaction transaction,
@@ -94,7 +109,17 @@ public class FraudDetector extends KeyedProcessFunction<Long, Transaction, Alert
             timerState.update(timer);
         }
     }
-    //触发定时任务
+
+    /**
+     * 在定时任务触发时被调用
+     *
+     * @param timestamp The timestamp of the firing timer.
+     * @param ctx       An {@link OnTimerContext} that allows querying the timestamp, the {@link
+     *                  TimeDomain}, and the key of the firing timer and getting a {@link TimerService} for
+     *                  registering timers and querying the time. The context is only valid during the invocation
+     *                  of this method, do not store it.
+     * @param out       The collector for returning result values.
+     */
     @Override
     public void onTimer(long timestamp, OnTimerContext ctx, Collector<Alert> out) {
         // remove flag after 1 minute
