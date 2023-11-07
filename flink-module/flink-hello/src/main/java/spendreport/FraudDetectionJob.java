@@ -16,6 +16,7 @@ public class FraudDetectionJob {
     public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
 
+        //create a source
         DataStream<Transaction> transactions = env
                 .addSource(new TransactionSource())
                 .name("transactions");
