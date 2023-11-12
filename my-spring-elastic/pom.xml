@@ -7,9 +7,9 @@
         <artifactId>amazing</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>elastic</artifactId>
+    <artifactId>my-spring-elastic</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-elastic</name>
+    <name>my-spring-elastic</name>
     <description>Demo project for Spring Boot</description>
     <properties>
     </properties>

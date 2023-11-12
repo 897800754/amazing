@@ -7,9 +7,9 @@
         <artifactId>amazing</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>flink-module</artifactId>
+    <artifactId>my-flink-module</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>flink-module</name>
+    <name>my-flink-module</name>
     <description>flink-module</description>
     <packaging>pom</packaging>
 

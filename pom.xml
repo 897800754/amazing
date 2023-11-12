@@ -11,24 +11,25 @@
     <description>Demo project for Spring Boot</description>
 
     <modules>
-        <module>leetcode</module>
-        <module>design</module>
-        <module>jol</module>
-        <module>bytebuddy</module>
-        <module>spring-validate</module>
-        <module>spring-batch</module>
-        <module>spring-retry</module>
-        <module>core</module>
-        <module>sharding-jdbc</module>
-        <module>spring-trx</module>
-        <module>zookeeper</module>
-        <module>docker</module>
-        <module>bloomfilter</module>
-        <module>spring-kafka</module>
-        <module>spring-elastic</module>
-        <module>liteflow</module>
-        <module>mybatis-flex</module>
-        <module>spring-security</module>
+        <module>my-leetcode</module>
+        <module>my-design</module>
+        <module>my-jol</module>
+        <module>my-bytebuddy</module>
+        <module>my-spring-validate</module>
+        <module>my-spring-batch</module>
+        <module>my-spring-retry</module>
+        <module>my-core</module>
+        <module>my-sharding-jdbc</module>
+        <module>my-spring-trx</module>
+        <module>my-zookeeper</module>
+        <module>my-docker</module>
+        <module>my-bloomfilter</module>
+        <module>my-spring-kafka</module>
+        <module>my-spring-elastic</module>
+        <module>my-liteflow</module>
+        <module>my-mybatis-flex</module>
+        <module>my-spring-security</module>
+        <module>my-sentinel</module>
     </modules>
 
     <properties>

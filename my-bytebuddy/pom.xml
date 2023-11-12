@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>bytebuddy</artifactId>
+    <artifactId>my-bytebuddy</artifactId>
 
     <dependencies>
         <dependency>

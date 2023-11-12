@@ -7,9 +7,9 @@
         <artifactId>amazing</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>zookeeper</artifactId>
+    <artifactId>my-zookeeper</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>zookeeper</name>
+    <name>my-zookeeper</name>
     <properties>
     </properties>
 

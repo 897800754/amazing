@@ -81,3 +81,7 @@ spring/src/main/resources/templates/
 /env/docker-image/redis/cluster/redis2-slave/
 /env/docker-image/redis/cluster/redis3/
 /env/docker-image/redis/cluster/redis3-slave/
+/env/docker-image/elastic/search/logs/
+/env/docker-image/elastic/search/data/
+/env/docker-image/kafka/data/zookeeper/data/
+/my-rocksdb/.mvn/
