@@ -13,14 +13,12 @@
     <description>my-sentinel</description>
     <packaging>pom</packaging>
     <properties>
-<!--        <spring-cloud-alibaba.version>2.1.2.RELEASE</spring-cloud-alibaba.version>-->
+        <!--        <spring-cloud-alibaba.version>2.1.2.RELEASE</spring-cloud-alibaba.version>-->
 
         <java.version>8</java.version>
     </properties>
     <modules>
         <module>my-sentinel-server</module>
-        <module>my-sentinel-cluster-client</module>
-        <module>my-sentinel-cluster-server</module>
         <module>my-sentinel-cloud-server</module>
     </modules>
     <dependencies>
@@ -28,15 +26,15 @@
     </dependencies>
 
     <dependencyManagement>
-<!--        <dependencies>-->
-<!--            <dependency>-->
-<!--                <groupId>com.alibaba.cloud</groupId>-->
-<!--                <artifactId>spring-cloud-alibaba-dependencies</artifactId>-->
-<!--                <version>${spring-cloud-alibaba.version}</version>-->
-<!--                <type>pom</type>-->
-<!--                <scope>import</scope>-->
-<!--            </dependency>-->
-<!--        </dependencies>-->
+        <!--        <dependencies>-->
+        <!--            <dependency>-->
+        <!--                <groupId>com.alibaba.cloud</groupId>-->
+        <!--                <artifactId>spring-cloud-alibaba-dependencies</artifactId>-->
+        <!--                <version>${spring-cloud-alibaba.version}</version>-->
+        <!--                <type>pom</type>-->
+        <!--                <scope>import</scope>-->
+        <!--            </dependency>-->
+        <!--        </dependencies>-->
 
     </dependencyManagement>
 

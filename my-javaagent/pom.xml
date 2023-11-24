@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>amazing</artifactId>
+        <groupId>cn.cg</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>my-javaagent</artifactId>
+    <version>0.0.1</version>
+
+    <dependencies>
+
+    </dependencies>
+
+    <build>
+        <finalName>my-javaagent</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                        </manifest>
+                        <!--
+                        Premain-Class：包含premain方法的类，需要配置为类的全路径
+                        Can-Redefine-Classes：为true时表示能够重新定义class
+                        Can-Retransform-Classes：为true时表示能够重新转换class，实现字节码替换
+                        Can-Set-Native-Method-Prefix：为true时表示能够设置native方法的前缀
+                        -->
+                        <manifestEntries>
+                            <Premain-Class>quickstart.MyPreMainAgent</Premain-Class>
+                            <Can-Redefine-Classes>true</Can-Redefine-Classes>
+                            <Can-Retransform-Classes>true</Can-Retransform-Classes>
+                            <Can-Set-Native-Method-Prefix>true</Can-Set-Native-Method-Prefix>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
