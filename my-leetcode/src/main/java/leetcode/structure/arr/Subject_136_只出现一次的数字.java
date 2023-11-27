@@ -26,7 +26,7 @@ import java.util.*;
  * @author: cg
  * @date: 2023-04-21 17:47
  **/
-public class Subject_136 {
+public class Subject_136_只出现一次的数字 {
 
     public static void main(String[] args) {
 
@@ -44,6 +44,9 @@ public class Subject_136 {
      * 成对出现的数 异或为0
      * a^a = 0;
      * a^b^a = (a^a)^b = 0^b =b
+     *
+     * 001^000 = 001
+     * 001^001 = 000
      *
      * @param nums
      * @return

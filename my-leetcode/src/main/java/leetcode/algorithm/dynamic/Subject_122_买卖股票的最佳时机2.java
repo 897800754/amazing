@@ -1,4 +1,4 @@
-package leetcode.structure.arr;
+package leetcode.algorithm.dynamic;
 
 /**
  * https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/description/
@@ -13,7 +13,7 @@ package leetcode.structure.arr;
  * @author: cg
  * @date: 2023-04-21 17:47
  **/
-public class Subject_122 {
+public class Subject_122_买卖股票的最佳时机2 {
 
     public static void main(String[] args) {
         int[] req = new int[]{7, 1, 5, 3, 6, 4};

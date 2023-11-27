@@ -8,6 +8,7 @@ import java.util.concurrent.FutureTask;
  * @author: cg
  * @date: 2023-03-23 17:51
  **/
+
 public class FutureDemo {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         FutureTask<String> stringFutureTask = new FutureTask<String>(new Callable<String>() {

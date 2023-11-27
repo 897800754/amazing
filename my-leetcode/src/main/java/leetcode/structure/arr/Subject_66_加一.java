@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  * https://leetcode.cn/problems/plus-one/description/
+ * <p>
  * 给定一个由 整数 组成的 非空 数组所表示的非负整数，在该数的基础上加一。
  * <p>
  * 最高位数字存放在数组的首位， 数组中每个元素只存储单个数字。
@@ -30,7 +31,7 @@ import java.util.Arrays;
  * @author: cg
  * @date: 2023-04-21 17:47
  **/
-public class Subject_66 {
+public class Subject_66_加一 {
 
     public static void main(String[] args) {
         int[] req1 = new int[]{9, 9, 9, 9};

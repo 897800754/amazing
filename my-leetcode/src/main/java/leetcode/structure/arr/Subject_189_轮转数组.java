@@ -24,7 +24,7 @@ import java.util.Arrays;
  * @author: cg
  * @date: 2023-04-21 17:47
  **/
-public class Subject_189 {
+public class Subject_189_轮转数组 {
 
     public static void main(String[] args) {
 //        int[] req = new int[]{1, 2, 3, 4, 5, 6, 7};
@@ -37,7 +37,6 @@ public class Subject_189 {
     }
 
     /**
-     *
      * @param nums
      * @param k
      */
