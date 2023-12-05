@@ -87,3 +87,4 @@ spring/src/main/resources/templates/
 /my-rocksdb/.mvn/
 /my-sentinel/dashboard.log
 /my-sentinel/sentinel.log
+/env/canal/canal.deployer-1.1.7/logs/
