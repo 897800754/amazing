@@ -10,8 +10,6 @@ public class Subject_80_删除有序数组中的重复项2_TODO {
 
     public static void main(String[] args) {
 
-        System.out.println(removeDuplicates(new int[]{3, 2, 2, 3}, 3));
-        System.out.println(removeDuplicates(new int[]{0, 1, 2, 2, 3, 0, 4, 2}, 2));
 
     }
 
